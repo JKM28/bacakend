@@ -32,7 +32,7 @@
     </section>
 
     <section v-if="finished" class="result-card">
-      <div class="result-title">Results</div>
+      <div class="result-title">Quiz Summary</div>
       <div class="result-line">Auto-scored points: {{ score }} / {{ maxScore }}</div>
       <div class="result-line">Completion: {{ answeredCount }} / {{ questions.length }} responses</div>
       <button class="retry-btn" @click="restart">Try again</button>
@@ -100,9 +100,9 @@ function onAnswered({ id, value }) {
       const correct = String(q.answer || '').trim().toLowerCase();
       if (normalized && normalized === correct) {
         score.value += (q.points || 1);
-        feedback.value = { kind: 'ok', message: 'Correct answer. Nice work.' };
+        feedback.value = { kind: 'ok', message: 'Answer saved.' };
       } else {
-        feedback.value = { kind: 'warn', message: `Not quite. Correct answer: ${q.answer}` };
+        feedback.value = { kind: 'warn', message: 'Answer saved. Keep going.' };
       }
     } else if (q && q.type === 'short_answer') {
       feedback.value = { kind: 'info', message: 'Response saved. Short answers are for practice and not auto-scored.' };
