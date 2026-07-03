@@ -22,16 +22,24 @@ export default async function handler(req, res) {
     const text = result.response.text().toLowerCase();
 
     if (text.includes("correct")) {
-      res.json({ feedback: "✅ Correct!" });
+      return res.json({ feedback: "✅ Correct!" });
     } else if (text.includes("wrong")) {
-      res.json({ feedback: "❌ Wrong." });
+      return res.json({ feedback: "❌ Wrong." });
     } else {
+      // Fallback: direct string comparison
       const normalized = (userSentence || "").trim().toLowerCase();
       const correct = (expectedAnswer || "").trim().toLowerCase();
-      res.json({ feedback: normalized === correct ? "✅ Correct!" : "❌ Wrong." });
+      return res.json({
+        feedback: normalized === correct ? "✅ Correct!" : "❌ Wrong."
+      });
     }
   } catch (err) {
     console.error("Gemini error:", err);
-    res.json({ feedback: "❌ Wrong (AI unavailable)." });
+    // Fallback if Gemini API fails
+    const normalized = (userSentence || "").trim().toLowerCase();
+    const correct = (expectedAnswer || "").trim().toLowerCase();
+    return res.json({
+      feedback: normalized === correct ? "✅ Correct!" : "❌ Wrong (AI unavailable)."
+    });
   }
 }

@@ -77,35 +77,39 @@
 import { ref, computed, watch, onBeforeUnmount } from 'vue';
 import QuestionRenderer from './QuestionRenderer.vue';
 
+// ✅ Props definition
 const props = defineProps({
   level: { type: String, default: 'A1' },
   questions: { type: Array, default: () => [] }
 });
 
+// ✅ Reactive state
 const index = ref(0);
 const answers = ref({});
-const results = ref({}); // { [id]: { value, status: 'correct'|'wrong'|'ungraded', detail } }
+const results = ref({});
 const score = ref(0);
 const feedback = ref(null);
 const randomizedQuestions = ref([]);
 const isGrading = ref(false);
 let advanceTimer = null;
 
+// ✅ Environment-based API URL
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
+// ✅ Computed values
 const questions = computed(() => randomizedQuestions.value);
 const current = computed(() => questions.value[index.value] || null);
-const maxScore = computed(() => questions.value.reduce((s,q)=>s+(q.points||1),0));
+const maxScore = computed(() => questions.value.reduce((s, q) => s + (q.points || 1), 0));
 const finished = computed(() => index.value >= questions.value.length);
 const answeredCount = computed(() => Object.keys(answers.value).length);
-const displayQuestionNumber = computed(() => {
-  if (questions.value.length === 0) return 0;
-  return Math.min(index.value + 1, questions.value.length);
-});
+const displayQuestionNumber = computed(() => Math.min(index.value + 1, questions.value.length));
 const progressPercent = computed(() => {
   if (questions.value.length === 0) return 0;
   const ratio = Math.min(index.value, questions.value.length) / questions.value.length;
   return Math.round(ratio * 100);
 });
 
+// ✅ Watch for new questions
 watch(
   () => props.questions,
   (newQuestions) => {
@@ -120,6 +124,7 @@ watch(
   { immediate: true }
 );
 
+// ✅ Utility functions
 function restart() {
   randomizedQuestions.value = shuffleQuestions(props.questions || []);
   index.value = 0;
@@ -170,13 +175,14 @@ function reviewStatusLabel(id) {
   return '📝 Not graded';
 }
 
+// ✅ Main grading logic
 async function onAnswered({ id, value }) {
   const q = questions.value.find(x => x.id === id);
   if (!q) return;
 
   answers.value[id] = value;
 
-  // For auto-scored types — instant feedback, short delay is fine
+  // Auto-scored types
   if (['mcq', 'gapfill', 'audio'].includes(q.type)) {
     const normalized = String(value || '').trim().toLowerCase();
     const correct = String(q.answer || '').trim().toLowerCase();
@@ -192,13 +198,13 @@ async function onAnswered({ id, value }) {
     scheduleAdvance(1800);
   }
 
-  // Short answers — AI-graded against a rubric, feedback takes longer to read
+  // AI-graded short answers
   else if (q.type === 'short_answer') {
     isGrading.value = true;
     feedback.value = { kind: 'info', message: 'Checking your response…' };
 
     try {
-      const res = await fetch('http://localhost:3000/check-writing', {
+      const res = await fetch(`${API_BASE}/check-writing`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -207,6 +213,7 @@ async function onAnswered({ id, value }) {
           rubric: q.rubric || 'Evaluate for basic coherence, relevance to the prompt, and grammatical correctness appropriate to the stated level.'
         })
       });
+
       const data = await res.json();
 
       if (data.passed === true) {
@@ -231,18 +238,21 @@ async function onAnswered({ id, value }) {
   }
 }
 
+// ✅ Navigation
 function next() {
   clearAdvanceTimer();
   if (index.value < questions.value.length - 1) index.value++;
   else index.value = questions.value.length;
 }
+
 function prev() {
   clearAdvanceTimer();
   if (index.value > 0) index.value--;
 }
 
-onBeforeUnmount(() => clearAdvanceTimer());
+onBeforeUnmount(() => clearAdvanccleTimer());
 </script>
+
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
