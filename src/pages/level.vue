@@ -6,11 +6,11 @@
 
       <p class="hero-kicker">German Practice Studio</p>
       <div class="hero-row">
-        <h2 class="hero-title">Level {{ level }}</h2>
+        <h2 class="hero-title">{{ pageTitle }}</h2>
         <span class="level-pill" :class="levelClass">{{ level }}</span>
       </div>
-      <p class="hero-subtitle">Local quiz (no auth). Questions are loaded from <code>public/data/Questions.json</code>.</p>
-      <router-link to="/" class="back-link">Back to level selection</router-link>
+      <p class="hero-subtitle">{{ subtitle }}</p>
+      <router-link :to="backLink" class="back-link">{{ backLinkLabel }}</router-link>
     </section>
 
     <section class="quiz-shell">
@@ -26,19 +26,35 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
+import { useRoute } from 'vue-router';
 import QuizPlayer from '../components/QuizPlayer.vue';
 const props = defineProps({ level: { type: String, default: 'A1' } });
+const route = useRoute();
 
 const loading = ref(true);
 const questions = ref([]);
+const activeSkill = computed(() => {
+  if (typeof route.query.skill !== 'string') return '';
+  return route.query.skill.trim().toLowerCase();
+});
+const isVerbPrepositions = computed(() => activeSkill.value === 'verb-prepositions');
+const pageTitle = computed(() => (isVerbPrepositions.value ? `Verb + Prepositions • ${props.level}` : `Level ${props.level}`));
+const subtitle = computed(() => {
+  if (isVerbPrepositions.value) {
+    return 'Check the verb, case, and example sentence, then choose the English translation.';
+  }
+  return 'Local quiz (no auth). Questions are loaded from public/data/Questions.json.';
+});
+const backLink = computed(() => (isVerbPrepositions.value ? '/topic/verb-prepositions' : '/'));
+const backLinkLabel = computed(() => (isVerbPrepositions.value ? 'Back to Verb + Prepositions' : 'Back to home'));
 const levelClass = computed(() => {
   if (props.level === 'A1') return 'pill-a1';
   if (props.level === 'A2') return 'pill-a2';
   return 'pill-b1';
 });
 
-onMounted(async () => {
+async function loadQuestions() {
   try {
     // Match the actual file name in public/data and keep a fallback for older naming.
     let res = await fetch('/data/Questions.json'); // public/data/Questions.json
@@ -46,14 +62,20 @@ onMounted(async () => {
       res = await fetch('/data/questions.json');
     }
     const all = await res.json();
-    questions.value = all.filter(q => q.level === props.level);
+    const levelQuestions = all.filter((q) => q.level === props.level);
+    const topicQuestions = activeSkill.value
+      ? levelQuestions.filter((q) => String(q.skill || '').trim().toLowerCase() === activeSkill.value)
+      : levelQuestions;
+    questions.value = topicQuestions.length > 0 ? topicQuestions : levelQuestions;
   } catch (e) {
     console.error(e);
     questions.value = [];
   } finally {
     loading.value = false;
   }
-});
+}
+
+watch(() => [props.level, activeSkill.value], loadQuestions, { immediate: true });
 </script>
 
 <style scoped>

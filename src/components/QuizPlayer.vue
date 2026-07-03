@@ -37,11 +37,44 @@
       <div class="result-line">Completion: {{ answeredCount }} / {{ questions.length }} responses</div>
       <button class="retry-btn" @click="restart">Try again</button>
     </section>
+
+    <section v-if="finished" class="review-list">
+      <div class="review-heading">Answer Review</div>
+
+      <div
+        v-for="(q, i) in questions"
+        :key="q.id"
+        class="review-item"
+        :class="reviewStatusClass(q.id)"
+      >
+        <div class="review-item-top">
+          <span class="review-number">Q{{ i + 1 }}</span>
+          <span class="review-status">{{ reviewStatusLabel(q.id) }}</span>
+        </div>
+
+        <div class="review-prompt" v-html="q.prompt"></div>
+
+        <div class="review-row">
+          <span class="review-label">Your answer</span>
+          <span class="review-value">{{ results[q.id] ? results[q.id].value : '—' }}</span>
+        </div>
+
+        <div class="review-row" v-if="['mcq', 'gapfill', 'audio'].includes(q.type)">
+          <span class="review-label">Correct answer</span>
+          <span class="review-value">{{ q.answer }}</span>
+        </div>
+
+        <div class="review-row" v-if="q.type === 'short_answer' && results[q.id]">
+          <span class="review-label">AI feedback</span>
+          <span class="review-value">{{ results[q.id].detail }}</span>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue';
+import { ref, computed, watch, onBeforeUnmount } from 'vue';
 import QuestionRenderer from './QuestionRenderer.vue';
 
 const props = defineProps({
@@ -51,9 +84,12 @@ const props = defineProps({
 
 const index = ref(0);
 const answers = ref({});
+const results = ref({}); // { [id]: { value, status: 'correct'|'wrong'|'ungraded', detail } }
 const score = ref(0);
 const feedback = ref(null);
 const randomizedQuestions = ref([]);
+const isGrading = ref(false);
+let advanceTimer = null;
 
 const questions = computed(() => randomizedQuestions.value);
 const current = computed(() => questions.value[index.value] || null);
@@ -76,11 +112,23 @@ watch(
     randomizedQuestions.value = shuffleQuestions(newQuestions || []);
     index.value = 0;
     answers.value = {};
+    results.value = {};
     score.value = 0;
     feedback.value = null;
+    clearAdvanceTimer();
   },
   { immediate: true }
 );
+
+function restart() {
+  randomizedQuestions.value = shuffleQuestions(props.questions || []);
+  index.value = 0;
+  answers.value = {};
+  results.value = {};
+  score.value = 0;
+  feedback.value = null;
+  clearAdvanceTimer();
+}
 
 function shuffleQuestions(items) {
   const cloned = [...items];
@@ -91,208 +139,417 @@ function shuffleQuestions(items) {
   return cloned;
 }
 
-function onAnswered({ id, value }) {
-  if (answers.value[id] == null) {
-    answers.value[id] = value;
-    const q = questions.value.find(x => x.id === id);
-    if (q && ['mcq','gapfill','audio'].includes(q.type)) {
-      const normalized = String(value || '').trim().toLowerCase();
-      const correct = String(q.answer || '').trim().toLowerCase();
-      if (normalized && normalized === correct) {
+function clearAdvanceTimer() {
+  if (advanceTimer) {
+    clearTimeout(advanceTimer);
+    advanceTimer = null;
+  }
+}
+
+function scheduleAdvance(delayMs) {
+  clearAdvanceTimer();
+  advanceTimer = setTimeout(() => {
+    advanceTimer = null;
+    next();
+  }, delayMs);
+}
+
+function reviewStatusClass(id) {
+  const r = results.value[id];
+  if (!r) return 'review-skipped';
+  if (r.status === 'correct') return 'review-correct';
+  if (r.status === 'wrong') return 'review-wrong';
+  return 'review-ungraded';
+}
+
+function reviewStatusLabel(id) {
+  const r = results.value[id];
+  if (!r) return '⚪ Skipped';
+  if (r.status === 'correct') return '✅ Correct';
+  if (r.status === 'wrong') return '❌ Wrong';
+  return '📝 Not graded';
+}
+
+async function onAnswered({ id, value }) {
+  const q = questions.value.find(x => x.id === id);
+  if (!q) return;
+
+  answers.value[id] = value;
+
+  // For auto-scored types — instant feedback, short delay is fine
+  if (['mcq', 'gapfill', 'audio'].includes(q.type)) {
+    const normalized = String(value || '').trim().toLowerCase();
+    const correct = String(q.answer || '').trim().toLowerCase();
+
+    if (normalized === correct) {
+      score.value += (q.points || 1);
+      feedback.value = { kind: 'ok', message: '✅ Correct!' };
+      results.value[id] = { value, status: 'correct', detail: q.answer };
+    } else {
+      feedback.value = { kind: 'warn', message: '❌ Wrong.' };
+      results.value[id] = { value, status: 'wrong', detail: q.answer };
+    }
+    scheduleAdvance(1800);
+  }
+
+  // Short answers — AI-graded against a rubric, feedback takes longer to read
+  else if (q.type === 'short_answer') {
+    isGrading.value = true;
+    feedback.value = { kind: 'info', message: 'Checking your response…' };
+
+    try {
+      const res = await fetch('http://localhost:3000/check-writing', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          userText: value,
+          prompt: q.prompt,
+          rubric: q.rubric || 'Evaluate for basic coherence, relevance to the prompt, and grammatical correctness appropriate to the stated level.'
+        })
+      });
+      const data = await res.json();
+
+      if (data.passed === true) {
         score.value += (q.points || 1);
-        feedback.value = { kind: 'ok', message: 'Answer saved.' };
+        feedback.value = { kind: 'ok', message: `✅ ${data.feedback}` };
+        results.value[id] = { value, status: 'correct', detail: data.feedback };
+      } else if (data.passed === false) {
+        feedback.value = { kind: 'warn', message: `📝 ${data.feedback}` };
+        results.value[id] = { value, status: 'wrong', detail: data.feedback };
       } else {
-        feedback.value = { kind: 'warn', message: 'Answer saved. Keep going.' };
+        feedback.value = { kind: 'info', message: data.feedback };
+        results.value[id] = { value, status: 'ungraded', detail: data.feedback };
       }
-    } else if (q && q.type === 'short_answer') {
-      feedback.value = { kind: 'info', message: 'Response saved. Short answers are for practice and not auto-scored.' };
+    } catch (err) {
+      console.error(err);
+      feedback.value = { kind: 'info', message: 'Response saved. AI feedback unavailable.' };
+      results.value[id] = { value, status: 'ungraded', detail: 'AI feedback unavailable.' };
+    } finally {
+      isGrading.value = false;
+      scheduleAdvance(7000);
     }
   }
-  next();
 }
 
-function next() { if (index.value < questions.value.length - 1) index.value++; else index.value = questions.value.length; }
-function prev() { if (index.value > 0) index.value--; }
-
-function restart() {
-  randomizedQuestions.value = shuffleQuestions(props.questions || []);
-  index.value = 0;
-  answers.value = {};
-  score.value = 0;
-  feedback.value = null;
+function next() {
+  clearAdvanceTimer();
+  if (index.value < questions.value.length - 1) index.value++;
+  else index.value = questions.value.length;
 }
+function prev() {
+  clearAdvanceTimer();
+  if (index.value > 0) index.value--;
+}
+
+onBeforeUnmount(() => clearAdvanceTimer());
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+/* ==========================================
+   TOKENS — same as home.vue / topic.vue
+========================================== */
+
 .quiz-player {
+  --paper: #f2eee5;
+  --ink: #16130e;
+  --red: #e2261f;
+  --blue: #1b4fd8;
+  --yellow: #f5b80c;
+  --muted: #6e675b;
+  --rule: 2px solid var(--ink);
+
+  font-family: "Archivo", sans-serif;
+  color: var(--ink);
   max-width: 46rem;
   margin: 0 auto;
   display: grid;
-  gap: 0.85rem;
+  gap: 20px;
 }
 
+/* ==========================================
+   STATUS CARD
+========================================== */
+
 .status-card {
-  border-radius: 1rem;
-  border: 1px solid #dfd7c7;
-  background: linear-gradient(180deg, #fffaf0 0%, #fffef9 100%);
-  padding: 0.9rem 1rem;
+  border: var(--rule);
+  background: var(--paper);
+  padding: 20px 24px;
 }
 
 .status-top {
   display: flex;
   justify-content: space-between;
-  gap: 0.7rem;
+  gap: 16px;
   align-items: flex-end;
+  flex-wrap: wrap;
 }
 
 .status-kicker {
   margin: 0;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.74rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-weight: 700;
-  color: #8a6642;
+  color: var(--muted);
 }
 
 .status-card h3 {
-  margin: 0.2rem 0 0;
-  color: #182838;
-  font-size: 1.15rem;
+  margin: 6px 0 0;
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--ink);
 }
 
 .status-stats {
   display: flex;
-  gap: 0.4rem;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
 .status-stats span {
-  border-radius: 999px;
-  border: 1px solid #c9d8e8;
-  background: #edf5ff;
-  padding: 0.14rem 0.5rem;
-  font-size: 0.74rem;
-  font-weight: 700;
-  color: #23405c;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  border: 2px solid var(--ink);
+  padding: 4px 10px;
+  color: var(--ink);
 }
 
 .progress-track {
-  margin-top: 0.72rem;
-  height: 0.6rem;
-  border-radius: 999px;
-  background: #e7edf4;
+  margin-top: 18px;
+  height: 10px;
+  border: 2px solid var(--ink);
+  background: var(--paper);
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #1a7bd8 0%, #45b1ff 100%);
+  background: var(--blue);
   transition: width 220ms ease;
 }
 
 .progress-text {
-  margin: 0.45rem 0 0;
-  font-size: 0.84rem;
-  color: #4d6275;
-  font-weight: 600;
+  margin: 10px 0 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.82rem;
+  color: var(--muted);
 }
+
+/* ==========================================
+   QUESTION SHELL
+========================================== */
 
 .question-shell {
-  border-radius: 1rem;
-  background: #f7f3eb;
-  border: 1px solid #e6dece;
-  padding: 0.6rem;
+  background: transparent;
 }
 
+/* ==========================================
+   FEEDBACK
+========================================== */
+
 .feedback-card {
-  border-radius: 0.78rem;
-  border: 1px solid transparent;
-  padding: 0.58rem 0.75rem;
-  font-size: 0.9rem;
-  font-weight: 600;
+  border: 2px solid var(--ink);
+  padding: 12px 16px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
 }
 
 .feedback-card.ok {
-  background: #e9f8ee;
-  border-color: #bddfc8;
-  color: #195532;
+  background: var(--yellow);
+  color: var(--ink);
 }
 
 .feedback-card.warn {
-  background: #fff3e4;
-  border-color: #f1d5ad;
-  color: #734512;
+  background: var(--paper);
+  border-color: var(--red);
+  color: var(--red);
 }
 
 .feedback-card.info {
-  background: #eaf4ff;
-  border-color: #c4d9f0;
-  color: #1f466c;
+  background: var(--paper);
+  border-color: var(--blue);
+  color: var(--blue);
 }
+
+/* ==========================================
+   NAV BUTTONS
+========================================== */
 
 .nav-row {
   display: flex;
   justify-content: space-between;
-  gap: 0.7rem;
+  gap: 16px;
 }
 
 .nav-btn,
 .retry-btn {
-  border: 1px solid #cfdceb;
-  border-radius: 0.72rem;
-  background: #ffffff;
-  color: #18314a;
-  padding: 0.52rem 0.95rem;
-  font-weight: 700;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .nav-btn:hover:not(:disabled),
 .retry-btn:hover {
-  background: #f3f8ff;
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .nav-btn:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
 .nav-btn-primary {
-  background: #0f66bf;
-  border-color: transparent;
-  color: #ffffff;
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .nav-btn-primary:hover:not(:disabled) {
-  background: #0b56a2;
+  background: var(--blue);
+  border-color: var(--blue);
 }
 
+/* ==========================================
+   RESULT CARD
+========================================== */
+
 .result-card {
-  border-radius: 0.95rem;
-  border: 1px solid #cbe7d3;
-  background: linear-gradient(180deg, #f1fff6 0%, #f8fff9 100%);
-  padding: 0.9rem;
+  border: var(--rule);
+  background: var(--paper);
+  padding: 24px;
 }
 
 .result-title {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: #1f5231;
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--ink);
 }
 
 .result-line {
-  margin-top: 0.35rem;
-  color: #355447;
+  margin-top: 8px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.88rem;
+  color: var(--muted);
 }
 
 .retry-btn {
-  margin-top: 0.7rem;
+  margin-top: 18px;
 }
 
 .nav-btn:focus-visible,
 .retry-btn:focus-visible {
-  outline: 3px solid #1d74d8;
-  outline-offset: 2px;
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
 }
+
+/* ==========================================
+   REVIEW LIST
+========================================== */
+
+.review-list {
+  display: grid;
+  gap: 14px;
+}
+
+.review-heading {
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  border-bottom: 3px solid var(--ink);
+  padding-bottom: 8px;
+}
+
+.review-item {
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  padding: 16px 18px;
+  border-left-width: 6px;
+}
+
+.review-correct {
+  border-left-color: var(--yellow);
+}
+
+.review-wrong {
+  border-left-color: var(--red);
+}
+
+.review-ungraded {
+  border-left-color: var(--blue);
+}
+
+.review-skipped {
+  border-left-color: var(--muted);
+  opacity: 0.75;
+}
+
+.review-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.review-number {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.review-status {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.review-prompt {
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  font-size: 1.02rem;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.review-row {
+  display: flex;
+  gap: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.review-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex-shrink: 0;
+  min-width: 110px;
+}
+
+.review-value {
+  color: var(--ink);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
 
 @media (max-width: 700px) {
   .status-top {
@@ -302,6 +559,11 @@ function restart() {
 
   .nav-row {
     flex-direction: column;
+  }
+
+  .review-label {
+    min-width: auto;
+    width: 100%;
   }
 }
 </style>

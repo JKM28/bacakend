@@ -5,11 +5,17 @@
     "skill": "greetings",
     "type": "mcq",
     "prompt": "Wie heißt du?",
-    "options": ["Ich heiße Anna.", "Ich komme aus Wien.", "Ich bin Lehrerin."],
+    "options": [
+      "Ich heiße Anna.",
+      "Ich komme aus Wien.",
+      "Ich bin Lehrerin."
+    ],
     "answer": "Ich heiße Anna.",
     "time_limit_seconds": 30,
     "points": 1,
-    "tags": ["introductions"]
+    "tags": [
+      "introductions"
+    ]
   },
   {
     "id": "a1-002",
@@ -21,7 +27,9 @@
     "answer": "komme",
     "time_limit_seconds": 30,
     "points": 1,
-    "tags": ["countries"]
+    "tags": [
+      "countries"
+    ]
   },
   {
     "id": "a1-003",
@@ -29,11 +37,17 @@
     "skill": "numbers",
     "type": "mcq",
     "prompt": "Welche Zahl ist richtig? 18 = ...",
-    "options": ["achtzehn", "achtzig", "neunzehn"],
+    "options": [
+      "achtzehn",
+      "achtzig",
+      "neunzehn"
+    ],
     "answer": "achtzehn",
     "time_limit_seconds": 30,
     "points": 1,
-    "tags": ["numbers"]
+    "tags": [
+      "numbers"
+    ]
   },
   {
     "id": "a1-004",
@@ -45,7 +59,10 @@
     "answer": "Der",
     "time_limit_seconds": 30,
     "points": 1,
-    "tags": ["grammar", "articles"]
+    "tags": [
+      "grammar",
+      "articles"
+    ]
   },
   {
     "id": "a1-005",
@@ -53,11 +70,17 @@
     "skill": "daily-life",
     "type": "mcq",
     "prompt": "Was passt? Ich trinke morgens ...",
-    "options": ["Kaffee", "Bett", "Schule"],
+    "options": [
+      "Kaffee",
+      "Bett",
+      "Schule"
+    ],
     "answer": "Kaffee",
     "time_limit_seconds": 30,
     "points": 1,
-    "tags": ["daily-routine"]
+    "tags": [
+      "daily-routine"
+    ]
   },
   {
     "id": "a1-006",
@@ -69,7 +92,9 @@
     "answer": "wohnt",
     "time_limit_seconds": 30,
     "points": 1,
-    "tags": ["family"]
+    "tags": [
+      "family"
+    ]
   },
   {
     "id": "a1-007",
@@ -77,11 +102,17 @@
     "skill": "time",
     "type": "mcq",
     "prompt": "Wann frühstückst du?",
-    "options": ["Um sieben Uhr.", "Im Montag.", "Seit Haus."],
+    "options": [
+      "Um sieben Uhr.",
+      "Im Montag.",
+      "Seit Haus."
+    ],
     "answer": "Um sieben Uhr.",
     "time_limit_seconds": 35,
     "points": 1,
-    "tags": ["time"]
+    "tags": [
+      "time"
+    ]
   },
   {
     "id": "a1-008",
@@ -93,7 +124,9 @@
     "answer": "Kilo",
     "time_limit_seconds": 35,
     "points": 1,
-    "tags": ["shopping"]
+    "tags": [
+      "shopping"
+    ]
   },
   {
     "id": "a1-009",
@@ -101,11 +134,17 @@
     "skill": "sentence-order",
     "type": "mcq",
     "prompt": "Welche Reihenfolge ist richtig?",
-    "options": ["Heute lerne ich Deutsch.", "Ich heute lerne Deutsch.", "Deutsch ich lerne heute."],
+    "options": [
+      "Heute lerne ich Deutsch.",
+      "Ich heute lerne Deutsch.",
+      "Deutsch ich lerne heute."
+    ],
     "answer": "Heute lerne ich Deutsch.",
     "time_limit_seconds": 35,
     "points": 1,
-    "tags": ["syntax"]
+    "tags": [
+      "syntax"
+    ]
   },
   {
     "id": "a1-010",
@@ -117,20 +156,29 @@
     "answer": "",
     "time_limit_seconds": 120,
     "points": 2,
-    "tags": ["writing", "daily-routine"]
+    "tags": [
+      "writing",
+      "daily-routine"
+    ],
+    "rubric": "A1 level. The student should write 2-3 simple present-tense sentences describing a daily routine (e.g. waking up, eating, going to school/work). Basic vocabulary is expected; minor article or word-order errors are acceptable and should not fail the response."
   },
-
   {
     "id": "a2-001",
     "level": "A2",
     "skill": "past-tense",
     "type": "mcq",
     "prompt": "Gestern ___ ich lange gearbeitet.",
-    "options": ["habe", "bin", "hat"],
+    "options": [
+      "habe",
+      "bin",
+      "hat"
+    ],
     "answer": "habe",
     "time_limit_seconds": 40,
     "points": 1,
-    "tags": ["perfekt"]
+    "tags": [
+      "perfekt"
+    ]
   },
   {
     "id": "a2-002",
@@ -142,7 +190,9 @@
     "answer": "mit dem",
     "time_limit_seconds": 40,
     "points": 1,
-    "tags": ["transport"]
+    "tags": [
+      "transport"
+    ]
   },
   {
     "id": "a2-003",
@@ -150,11 +200,17 @@
     "skill": "modals",
     "type": "mcq",
     "prompt": "Ich habe Fieber, ich ___ zum Arzt gehen.",
-    "options": ["muss", "durfte", "wollte"],
+    "options": [
+      "muss",
+      "durfte",
+      "wollte"
+    ],
     "answer": "muss",
     "time_limit_seconds": 40,
     "points": 1,
-    "tags": ["health"]
+    "tags": [
+      "health"
+    ]
   },
   {
     "id": "a2-004",
@@ -166,7 +222,9 @@
     "answer": "in",
     "time_limit_seconds": 35,
     "points": 1,
-    "tags": ["jobs"]
+    "tags": [
+      "jobs"
+    ]
   },
   {
     "id": "a2-005",
@@ -174,11 +232,17 @@
     "skill": "comparisons",
     "type": "mcq",
     "prompt": "Berlin ist ___ als Bonn.",
-    "options": ["grosser", "gross", "am grossten"],
+    "options": [
+      "grosser",
+      "gross",
+      "am grossten"
+    ],
     "answer": "grosser",
     "time_limit_seconds": 40,
     "points": 1,
-    "tags": ["adjectives"]
+    "tags": [
+      "adjectives"
+    ]
   },
   {
     "id": "a2-006",
@@ -190,7 +254,9 @@
     "answer": "weil",
     "time_limit_seconds": 35,
     "points": 1,
-    "tags": ["subordinate-clauses"]
+    "tags": [
+      "subordinate-clauses"
+    ]
   },
   {
     "id": "a2-007",
@@ -198,11 +264,17 @@
     "skill": "appointments",
     "type": "mcq",
     "prompt": "Welche Antwort ist passend? 'Kann ich einen Termin bekommen?'",
-    "options": ["Ja, am Dienstag um 10 Uhr.", "Ich mag Kaffee.", "Mein Auto ist blau."],
+    "options": [
+      "Ja, am Dienstag um 10 Uhr.",
+      "Ich mag Kaffee.",
+      "Mein Auto ist blau."
+    ],
     "answer": "Ja, am Dienstag um 10 Uhr.",
     "time_limit_seconds": 45,
     "points": 1,
-    "tags": ["dialog"]
+    "tags": [
+      "dialog"
+    ]
   },
   {
     "id": "a2-008",
@@ -214,7 +286,9 @@
     "answer": "werde",
     "time_limit_seconds": 40,
     "points": 1,
-    "tags": ["future"]
+    "tags": [
+      "future"
+    ]
   },
   {
     "id": "a2-009",
@@ -226,7 +300,11 @@
     "answer": "",
     "time_limit_seconds": 180,
     "points": 3,
-    "tags": ["writing", "travel"]
+    "tags": [
+      "writing",
+      "travel"
+    ],
+    "rubric": "A2 level. The student should write 3-4 sentences about a past vacation using perfect tense (haben/sein + participle). Should mention where they went and at least one activity."
   },
   {
     "id": "a2-010",
@@ -234,24 +312,35 @@
     "skill": "requests",
     "type": "mcq",
     "prompt": "Welche Form ist hoflich?",
-    "options": ["Konnten Sie mir helfen?", "Hilf mir jetzt!", "Du gibst mir das."],
+    "options": [
+      "Konnten Sie mir helfen?",
+      "Hilf mir jetzt!",
+      "Du gibst mir das."
+    ],
     "answer": "Konnten Sie mir helfen?",
     "time_limit_seconds": 40,
     "points": 1,
-    "tags": ["politeness"]
+    "tags": [
+      "politeness"
+    ]
   },
-
   {
     "id": "b1-001",
     "level": "B1",
     "skill": "opinions",
     "type": "mcq",
     "prompt": "Welche Einleitung passt zu einer Meinung?",
-    "options": ["Meiner Meinung nach ...", "Wie spat ist es?", "Guten Morgen."],
+    "options": [
+      "Meiner Meinung nach ...",
+      "Wie spat ist es?",
+      "Guten Morgen."
+    ],
     "answer": "Meiner Meinung nach ...",
     "time_limit_seconds": 45,
     "points": 1,
-    "tags": ["argumentation"]
+    "tags": [
+      "argumentation"
+    ]
   },
   {
     "id": "b1-002",
@@ -263,7 +352,9 @@
     "answer": "obwohl",
     "time_limit_seconds": 45,
     "points": 1,
-    "tags": ["contrast"]
+    "tags": [
+      "contrast"
+    ]
   },
   {
     "id": "b1-003",
@@ -271,11 +362,17 @@
     "skill": "reading",
     "type": "mcq",
     "prompt": "Ein Laden ist von 9 bis 18 Uhr geoffnet. Wann kannst du dort einkaufen?",
-    "options": ["Um 17:30 Uhr", "Um 7:45 Uhr", "Um 20:00 Uhr"],
+    "options": [
+      "Um 17:30 Uhr",
+      "Um 7:45 Uhr",
+      "Um 20:00 Uhr"
+    ],
     "answer": "Um 17:30 Uhr",
     "time_limit_seconds": 45,
     "points": 1,
-    "tags": ["comprehension"]
+    "tags": [
+      "comprehension"
+    ]
   },
   {
     "id": "b1-004",
@@ -287,7 +384,9 @@
     "answer": "den Service",
     "time_limit_seconds": 50,
     "points": 1,
-    "tags": ["email"]
+    "tags": [
+      "email"
+    ]
   },
   {
     "id": "b1-005",
@@ -295,11 +394,17 @@
     "skill": "grammar",
     "type": "mcq",
     "prompt": "Welche Form ist richtig? Wenn ich mehr Zeit hatte, ...",
-    "options": ["wurde ich mehr lesen.", "lese ich mehr.", "ich lese mehr."],
+    "options": [
+      "wurde ich mehr lesen.",
+      "lese ich mehr.",
+      "ich lese mehr."
+    ],
     "answer": "wurde ich mehr lesen.",
     "time_limit_seconds": 50,
     "points": 1,
-    "tags": ["konjunktiv"]
+    "tags": [
+      "konjunktiv"
+    ]
   },
   {
     "id": "b1-006",
@@ -311,7 +416,11 @@
     "answer": "",
     "time_limit_seconds": 220,
     "points": 3,
-    "tags": ["writing", "storytelling"]
+    "tags": [
+      "writing",
+      "storytelling"
+    ],
+    "rubric": "B1 level. The student should write 4-5 sentences describing a challenge they overcame, using past tense (perfect or preterite) and at least one connector (deshalb, obwohl, weil). Should show a clear beginning, difficulty, and resolution."
   },
   {
     "id": "b1-007",
@@ -319,11 +428,17 @@
     "skill": "work-life",
     "type": "mcq",
     "prompt": "Welche Aussage klingt am naturlichsten?",
-    "options": ["Ich arbeite flexibel im Homeoffice.", "Ich arbeite ein Haus.", "Ich arbeite bei Montag."],
+    "options": [
+      "Ich arbeite flexibel im Homeoffice.",
+      "Ich arbeite ein Haus.",
+      "Ich arbeite bei Montag."
+    ],
     "answer": "Ich arbeite flexibel im Homeoffice.",
     "time_limit_seconds": 50,
     "points": 1,
-    "tags": ["work"]
+    "tags": [
+      "work"
+    ]
   },
   {
     "id": "b1-008",
@@ -335,7 +450,9 @@
     "answer": "deshalb",
     "time_limit_seconds": 45,
     "points": 1,
-    "tags": ["connectors"]
+    "tags": [
+      "connectors"
+    ]
   },
   {
     "id": "b1-009",
@@ -347,7 +464,11 @@
     "answer": "",
     "time_limit_seconds": 220,
     "points": 3,
-    "tags": ["argumentation", "writing"]
+    "tags": [
+      "argumentation",
+      "writing"
+    ],
+    "rubric": "B1 level. The student should name 2 advantages and 1 disadvantage of social media in 4-5 sentences, using argumentative connectors (e.g. einerseits/andererseits, jedoch, außerdem). Response should be balanced and use present tense."
   },
   {
     "id": "b1-010",
@@ -355,24 +476,36 @@
     "skill": "planning",
     "type": "mcq",
     "prompt": "Du organisierst ein Treffen. Welche Nachricht ist am klarsten?",
-    "options": ["Treffen wir uns am Freitag um 18 Uhr am Bahnhof.", "Vielleicht irgendwo irgendwann.", "Ich denke uber das Treffen."],
+    "options": [
+      "Treffen wir uns am Freitag um 18 Uhr am Bahnhof.",
+      "Vielleicht irgendwo irgendwann.",
+      "Ich denke uber das Treffen."
+    ],
     "answer": "Treffen wir uns am Freitag um 18 Uhr am Bahnhof.",
     "time_limit_seconds": 50,
     "points": 1,
-    "tags": ["communication"]
+    "tags": [
+      "communication"
+    ]
   },
-
   {
     "id": "a1-011",
     "level": "A1",
     "skill": "food",
     "type": "mcq",
     "prompt": "Was isst du zum Fruhstuck?",
-    "options": ["Ich esse Brot.", "Ich schlafe Brot.", "Ich fahre Brot."],
+    "options": [
+      "Ich esse Brot.",
+      "Ich schlafe Brot.",
+      "Ich fahre Brot."
+    ],
     "answer": "Ich esse Brot.",
     "time_limit_seconds": 30,
     "points": 1,
-    "tags": ["daily-routine", "food"]
+    "tags": [
+      "daily-routine",
+      "food"
+    ]
   },
   {
     "id": "a1-012",
@@ -384,7 +517,9 @@
     "answer": "mein",
     "time_limit_seconds": 35,
     "points": 1,
-    "tags": ["grammar"]
+    "tags": [
+      "grammar"
+    ]
   },
   {
     "id": "a1-013",
@@ -392,11 +527,17 @@
     "skill": "classroom",
     "type": "mcq",
     "prompt": "Wo bist du?",
-    "options": ["Ich bin in der Schule.", "Ich bin mit Montag.", "Ich bin den Tisch."],
+    "options": [
+      "Ich bin in der Schule.",
+      "Ich bin mit Montag.",
+      "Ich bin den Tisch."
+    ],
     "answer": "Ich bin in der Schule.",
     "time_limit_seconds": 30,
     "points": 1,
-    "tags": ["places"]
+    "tags": [
+      "places"
+    ]
   },
   {
     "id": "a1-014",
@@ -408,7 +549,9 @@
     "answer": "lernen",
     "time_limit_seconds": 30,
     "points": 1,
-    "tags": ["present-tense"]
+    "tags": [
+      "present-tense"
+    ]
   },
   {
     "id": "a1-015",
@@ -416,11 +559,17 @@
     "skill": "weather",
     "type": "mcq",
     "prompt": "Wie ist das Wetter heute?",
-    "options": ["Es ist sonnig.", "Es ist Buch.", "Es ist arbeiten."],
+    "options": [
+      "Es ist sonnig.",
+      "Es ist Buch.",
+      "Es ist arbeiten."
+    ],
     "answer": "Es ist sonnig.",
     "time_limit_seconds": 30,
     "points": 1,
-    "tags": ["weather"]
+    "tags": [
+      "weather"
+    ]
   },
   {
     "id": "a1-016",
@@ -432,7 +581,9 @@
     "answer": "Woher",
     "time_limit_seconds": 35,
     "points": 1,
-    "tags": ["question-words"]
+    "tags": [
+      "question-words"
+    ]
   },
   {
     "id": "a1-017",
@@ -440,11 +591,17 @@
     "skill": "transport",
     "type": "mcq",
     "prompt": "Wie fahrt er zur Arbeit?",
-    "options": ["Mit dem Bus.", "In der Arbeit.", "Um arbeiten."],
+    "options": [
+      "Mit dem Bus.",
+      "In der Arbeit.",
+      "Um arbeiten."
+    ],
     "answer": "Mit dem Bus.",
     "time_limit_seconds": 30,
     "points": 1,
-    "tags": ["transport"]
+    "tags": [
+      "transport"
+    ]
   },
   {
     "id": "a1-018",
@@ -456,7 +613,10 @@
     "answer": "kein",
     "time_limit_seconds": 35,
     "points": 1,
-    "tags": ["grammar", "negation"]
+    "tags": [
+      "grammar",
+      "negation"
+    ]
   },
   {
     "id": "a1-019",
@@ -464,11 +624,17 @@
     "skill": "time",
     "type": "mcq",
     "prompt": "Welche Uhrzeit ist korrekt fur 14:30?",
-    "options": ["Es ist halb drei.", "Es ist halb funfzehn.", "Es ist vierzehn halb."],
+    "options": [
+      "Es ist halb drei.",
+      "Es ist halb funfzehn.",
+      "Es ist vierzehn halb."
+    ],
     "answer": "Es ist halb drei.",
     "time_limit_seconds": 35,
     "points": 1,
-    "tags": ["time"]
+    "tags": [
+      "time"
+    ]
   },
   {
     "id": "a1-020",
@@ -480,20 +646,29 @@
     "answer": "",
     "time_limit_seconds": 140,
     "points": 2,
-    "tags": ["writing", "family"]
+    "tags": [
+      "writing",
+      "family"
+    ],
+    "rubric": "A1 level. The student should write 2-3 simple sentences describing family members (e.g. names, relationships, where they live). Basic present-tense verbs and simple vocabulary expected."
   },
-
   {
     "id": "a2-011",
     "level": "A2",
     "skill": "daily-routine",
     "type": "mcq",
     "prompt": "Welche Reihenfolge ist richtig?",
-    "options": ["Nach der Arbeit koche ich zu Hause.", "Nach Arbeit ich koche zu Hause.", "Ich koche nach der Arbeit zu Hause ich."],
+    "options": [
+      "Nach der Arbeit koche ich zu Hause.",
+      "Nach Arbeit ich koche zu Hause.",
+      "Ich koche nach der Arbeit zu Hause ich."
+    ],
     "answer": "Nach der Arbeit koche ich zu Hause.",
     "time_limit_seconds": 40,
     "points": 1,
-    "tags": ["syntax"]
+    "tags": [
+      "syntax"
+    ]
   },
   {
     "id": "a2-012",
@@ -505,7 +680,9 @@
     "answer": "aber",
     "time_limit_seconds": 40,
     "points": 1,
-    "tags": ["connectors"]
+    "tags": [
+      "connectors"
+    ]
   },
   {
     "id": "a2-013",
@@ -513,11 +690,17 @@
     "skill": "shopping",
     "type": "mcq",
     "prompt": "Im Supermarkt frage ich: 'Wo finde ich ...?'",
-    "options": ["den Reis", "das fahren", "die schlafen"],
+    "options": [
+      "den Reis",
+      "das fahren",
+      "die schlafen"
+    ],
     "answer": "den Reis",
     "time_limit_seconds": 40,
     "points": 1,
-    "tags": ["shopping"]
+    "tags": [
+      "shopping"
+    ]
   },
   {
     "id": "a2-014",
@@ -529,7 +712,9 @@
     "answer": "weil",
     "time_limit_seconds": 40,
     "points": 1,
-    "tags": ["cause"]
+    "tags": [
+      "cause"
+    ]
   },
   {
     "id": "a2-015",
@@ -537,11 +722,17 @@
     "skill": "past-tense",
     "type": "mcq",
     "prompt": "Letztes Jahr ___ wir nach Italien gefahren.",
-    "options": ["sind", "haben", "seid"],
+    "options": [
+      "sind",
+      "haben",
+      "seid"
+    ],
     "answer": "sind",
     "time_limit_seconds": 45,
     "points": 1,
-    "tags": ["perfekt"]
+    "tags": [
+      "perfekt"
+    ]
   },
   {
     "id": "a2-016",
@@ -553,7 +744,9 @@
     "answer": "werde",
     "time_limit_seconds": 40,
     "points": 1,
-    "tags": ["future"]
+    "tags": [
+      "future"
+    ]
   },
   {
     "id": "a2-017",
@@ -561,11 +754,17 @@
     "skill": "directions",
     "type": "mcq",
     "prompt": "Welche Anweisung passt?",
-    "options": ["Gehen Sie geradeaus und dann links.", "Gehen Sie Hunger und dann Wasser.", "Gehen Sie Buch und dann Tisch."],
+    "options": [
+      "Gehen Sie geradeaus und dann links.",
+      "Gehen Sie Hunger und dann Wasser.",
+      "Gehen Sie Buch und dann Tisch."
+    ],
     "answer": "Gehen Sie geradeaus und dann links.",
     "time_limit_seconds": 45,
     "points": 1,
-    "tags": ["city"]
+    "tags": [
+      "city"
+    ]
   },
   {
     "id": "a2-018",
@@ -577,7 +776,9 @@
     "answer": "grosser",
     "time_limit_seconds": 40,
     "points": 1,
-    "tags": ["adjectives"]
+    "tags": [
+      "adjectives"
+    ]
   },
   {
     "id": "a2-019",
@@ -585,11 +786,17 @@
     "skill": "emails",
     "type": "mcq",
     "prompt": "Welche GruBformel passt am Ende einer freundlichen E-Mail?",
-    "options": ["Viele Grusse", "Sehr geehrter Kuchen", "Bis Bahnhof"],
+    "options": [
+      "Viele Grusse",
+      "Sehr geehrter Kuchen",
+      "Bis Bahnhof"
+    ],
     "answer": "Viele Grusse",
     "time_limit_seconds": 40,
     "points": 1,
-    "tags": ["writing"]
+    "tags": [
+      "writing"
+    ]
   },
   {
     "id": "a2-020",
@@ -601,20 +808,29 @@
     "answer": "",
     "time_limit_seconds": 200,
     "points": 3,
-    "tags": ["writing", "work"]
+    "tags": [
+      "writing",
+      "work"
+    ],
+    "rubric": "A2 level. The student should write 3-4 sentences describing an ideal workday, using present or future tense. Should include at least one specific detail (time, activity, or place)."
   },
-
   {
     "id": "b1-011",
     "level": "B1",
     "skill": "debate",
     "type": "mcq",
     "prompt": "Welche Aussage druckt Zustimmung aus?",
-    "options": ["Da stimme ich dir zu.", "Das ist mein Bahnhof.", "Ich esse die Meinung."],
+    "options": [
+      "Da stimme ich dir zu.",
+      "Das ist mein Bahnhof.",
+      "Ich esse die Meinung."
+    ],
     "answer": "Da stimme ich dir zu.",
     "time_limit_seconds": 50,
     "points": 1,
-    "tags": ["opinion"]
+    "tags": [
+      "opinion"
+    ]
   },
   {
     "id": "b1-012",
@@ -626,7 +842,9 @@
     "answer": "deshalb",
     "time_limit_seconds": 50,
     "points": 1,
-    "tags": ["cause-effect"]
+    "tags": [
+      "cause-effect"
+    ]
   },
   {
     "id": "b1-013",
@@ -634,11 +852,17 @@
     "skill": "reading",
     "type": "mcq",
     "prompt": "Im Text steht: 'Der Kurs beginnt am 5. Mai.' Was ist richtig?",
-    "options": ["Der Start ist am 5. Mai.", "Der Kurs endet am 5. Mai.", "Der Kurs kostet 5 Euro."],
+    "options": [
+      "Der Start ist am 5. Mai.",
+      "Der Kurs endet am 5. Mai.",
+      "Der Kurs kostet 5 Euro."
+    ],
     "answer": "Der Start ist am 5. Mai.",
     "time_limit_seconds": 50,
     "points": 1,
-    "tags": ["comprehension"]
+    "tags": [
+      "comprehension"
+    ]
   },
   {
     "id": "b1-014",
@@ -650,7 +874,9 @@
     "answer": "weil",
     "time_limit_seconds": 50,
     "points": 1,
-    "tags": ["email"]
+    "tags": [
+      "email"
+    ]
   },
   {
     "id": "b1-015",
@@ -658,11 +884,17 @@
     "skill": "konjunktiv",
     "type": "mcq",
     "prompt": "Welche Form ist ein guter Vorschlag?",
-    "options": ["Wir konnten fruher anfangen.", "Wir anfangen fruher.", "Wir konnte fruher anfangen."],
+    "options": [
+      "Wir konnten fruher anfangen.",
+      "Wir anfangen fruher.",
+      "Wir konnte fruher anfangen."
+    ],
     "answer": "Wir konnten fruher anfangen.",
     "time_limit_seconds": 55,
     "points": 1,
-    "tags": ["grammar"]
+    "tags": [
+      "grammar"
+    ]
   },
   {
     "id": "b1-016",
@@ -674,7 +906,9 @@
     "answer": "weil",
     "time_limit_seconds": 50,
     "points": 1,
-    "tags": ["arguments"]
+    "tags": [
+      "arguments"
+    ]
   },
   {
     "id": "b1-017",
@@ -682,11 +916,17 @@
     "skill": "work",
     "type": "mcq",
     "prompt": "Welche Antwort passt in einem Vorstellungsgesprach?",
-    "options": ["Ich habe drei Jahre Erfahrung im Kundenservice.", "Ich esse gerne Erfahrung.", "Meine Erfahrung fahrt Bus."],
+    "options": [
+      "Ich habe drei Jahre Erfahrung im Kundenservice.",
+      "Ich esse gerne Erfahrung.",
+      "Meine Erfahrung fahrt Bus."
+    ],
     "answer": "Ich habe drei Jahre Erfahrung im Kundenservice.",
     "time_limit_seconds": 55,
     "points": 1,
-    "tags": ["job-interview"]
+    "tags": [
+      "job-interview"
+    ]
   },
   {
     "id": "b1-018",
@@ -698,7 +938,9 @@
     "answer": "werden",
     "time_limit_seconds": 50,
     "points": 1,
-    "tags": ["future"]
+    "tags": [
+      "future"
+    ]
   },
   {
     "id": "b1-019",
@@ -706,11 +948,17 @@
     "skill": "discussion",
     "type": "mcq",
     "prompt": "Welche Aussage ist ausgewogen?",
-    "options": ["Online-Lernen ist flexibel, aber nicht fur alle gleich gut.", "Online-Lernen ist immer perfekt.", "Online-Lernen ist niemals moglich."],
+    "options": [
+      "Online-Lernen ist flexibel, aber nicht fur alle gleich gut.",
+      "Online-Lernen ist immer perfekt.",
+      "Online-Lernen ist niemals moglich."
+    ],
     "answer": "Online-Lernen ist flexibel, aber nicht fur alle gleich gut.",
     "time_limit_seconds": 55,
     "points": 1,
-    "tags": ["argumentation"]
+    "tags": [
+      "argumentation"
+    ]
   },
   {
     "id": "b1-020",
@@ -722,20 +970,29 @@
     "answer": "",
     "time_limit_seconds": 240,
     "points": 3,
-    "tags": ["writing", "argumentation"]
+    "tags": [
+      "writing",
+      "argumentation"
+    ],
+    "rubric": "B1 level. The student should write 4-5 sentences giving an opinion on cars vs. public transport in cities, with a brief justification. Should use opinion phrases (meiner Meinung nach) and at least one connector (weil, deshalb, obwohl)."
   },
-
   {
     "id": "a1-021",
     "level": "A1",
     "skill": "colors",
     "type": "mcq",
     "prompt": "Welche Farbe passt? Der Himmel ist ...",
-    "options": ["blau", "rund", "schnell"],
+    "options": [
+      "blau",
+      "rund",
+      "schnell"
+    ],
     "answer": "blau",
     "time_limit_seconds": 30,
     "points": 1,
-    "tags": ["vocabulary"]
+    "tags": [
+      "vocabulary"
+    ]
   },
   {
     "id": "a1-022",
@@ -747,7 +1004,9 @@
     "answer": "Kinder",
     "time_limit_seconds": 35,
     "points": 1,
-    "tags": ["grammar"]
+    "tags": [
+      "grammar"
+    ]
   },
   {
     "id": "a1-023",
@@ -755,11 +1014,17 @@
     "skill": "weekday",
     "type": "mcq",
     "prompt": "Welcher Tag kommt nach Dienstag?",
-    "options": ["Mittwoch", "Montag", "Sonntag"],
+    "options": [
+      "Mittwoch",
+      "Montag",
+      "Sonntag"
+    ],
     "answer": "Mittwoch",
     "time_limit_seconds": 30,
     "points": 1,
-    "tags": ["time"]
+    "tags": [
+      "time"
+    ]
   },
   {
     "id": "a1-024",
@@ -771,7 +1036,9 @@
     "answer": "sprichst",
     "time_limit_seconds": 35,
     "points": 1,
-    "tags": ["present-tense"]
+    "tags": [
+      "present-tense"
+    ]
   },
   {
     "id": "a1-025",
@@ -779,11 +1046,17 @@
     "skill": "home",
     "type": "mcq",
     "prompt": "Wo kochst du?",
-    "options": ["In der Kuche.", "In der Jacke.", "Auf dem Auto."],
+    "options": [
+      "In der Kuche.",
+      "In der Jacke.",
+      "Auf dem Auto."
+    ],
     "answer": "In der Kuche.",
     "time_limit_seconds": 30,
     "points": 1,
-    "tags": ["places"]
+    "tags": [
+      "places"
+    ]
   },
   {
     "id": "a1-026",
@@ -795,7 +1068,9 @@
     "answer": "Ich",
     "time_limit_seconds": 30,
     "points": 1,
-    "tags": ["grammar"]
+    "tags": [
+      "grammar"
+    ]
   },
   {
     "id": "a1-027",
@@ -803,11 +1078,17 @@
     "skill": "shopping",
     "type": "mcq",
     "prompt": "Was sagt man im Geschaft?",
-    "options": ["Wie viel kostet das?", "Ich koste das Haus.", "Wann ist der Bahnhof Tisch?"],
+    "options": [
+      "Wie viel kostet das?",
+      "Ich koste das Haus.",
+      "Wann ist der Bahnhof Tisch?"
+    ],
     "answer": "Wie viel kostet das?",
     "time_limit_seconds": 35,
     "points": 1,
-    "tags": ["dialog"]
+    "tags": [
+      "dialog"
+    ]
   },
   {
     "id": "a1-028",
@@ -819,7 +1100,9 @@
     "answer": "gehe",
     "time_limit_seconds": 35,
     "points": 1,
-    "tags": ["syntax"]
+    "tags": [
+      "syntax"
+    ]
   },
   {
     "id": "a1-029",
@@ -827,11 +1110,17 @@
     "skill": "months",
     "type": "mcq",
     "prompt": "Welcher Monat kommt nach April?",
-    "options": ["Mai", "Marz", "Juni"],
+    "options": [
+      "Mai",
+      "Marz",
+      "Juni"
+    ],
     "answer": "Mai",
     "time_limit_seconds": 30,
     "points": 1,
-    "tags": ["calendar"]
+    "tags": [
+      "calendar"
+    ]
   },
   {
     "id": "a1-030",
@@ -843,20 +1132,28 @@
     "answer": "",
     "time_limit_seconds": 150,
     "points": 2,
-    "tags": ["writing"]
+    "tags": [
+      "writing"
+    ],
+    "rubric": "A1 level. The student should write 2-3 simple sentences about a favorite city, mentioning at least one reason why they like it. Basic vocabulary and present tense expected."
   },
-
   {
     "id": "a2-021",
     "level": "A2",
     "skill": "appointments",
     "type": "mcq",
     "prompt": "Welche Antwort passt? 'Wann passt es Ihnen?'",
-    "options": ["Am Donnerstag um 15 Uhr.", "Ich bin ein Donnerstag.", "Der Termin trinkt Wasser."],
+    "options": [
+      "Am Donnerstag um 15 Uhr.",
+      "Ich bin ein Donnerstag.",
+      "Der Termin trinkt Wasser."
+    ],
     "answer": "Am Donnerstag um 15 Uhr.",
     "time_limit_seconds": 45,
     "points": 1,
-    "tags": ["dialog"]
+    "tags": [
+      "dialog"
+    ]
   },
   {
     "id": "a2-022",
@@ -868,7 +1165,9 @@
     "answer": "am",
     "time_limit_seconds": 40,
     "points": 1,
-    "tags": ["places"]
+    "tags": [
+      "places"
+    ]
   },
   {
     "id": "a2-023",
@@ -876,11 +1175,17 @@
     "skill": "workplace",
     "type": "mcq",
     "prompt": "Welche Aussage ist korrekt?",
-    "options": ["Ich arbeite seit zwei Jahren hier.", "Ich arbeite seit zwei Jahre hieren.", "Ich seit arbeite zwei Jahren hier."],
+    "options": [
+      "Ich arbeite seit zwei Jahren hier.",
+      "Ich arbeite seit zwei Jahre hieren.",
+      "Ich seit arbeite zwei Jahren hier."
+    ],
     "answer": "Ich arbeite seit zwei Jahren hier.",
     "time_limit_seconds": 45,
     "points": 1,
-    "tags": ["grammar"]
+    "tags": [
+      "grammar"
+    ]
   },
   {
     "id": "a2-024",
@@ -892,7 +1197,9 @@
     "answer": "muss",
     "time_limit_seconds": 40,
     "points": 1,
-    "tags": ["rules"]
+    "tags": [
+      "rules"
+    ]
   },
   {
     "id": "a2-025",
@@ -900,11 +1207,17 @@
     "skill": "leisure",
     "type": "mcq",
     "prompt": "Was machst du am Wochenende gern?",
-    "options": ["Ich gehe oft wandern.", "Ich wandern oft gehe ist.", "Ich oft Wandern Bahnhof."],
+    "options": [
+      "Ich gehe oft wandern.",
+      "Ich wandern oft gehe ist.",
+      "Ich oft Wandern Bahnhof."
+    ],
     "answer": "Ich gehe oft wandern.",
     "time_limit_seconds": 45,
     "points": 1,
-    "tags": ["free-time"]
+    "tags": [
+      "free-time"
+    ]
   },
   {
     "id": "a2-026",
@@ -916,7 +1229,9 @@
     "answer": "weil",
     "time_limit_seconds": 40,
     "points": 1,
-    "tags": ["cause"]
+    "tags": [
+      "cause"
+    ]
   },
   {
     "id": "a2-027",
@@ -924,11 +1239,17 @@
     "skill": "travel",
     "type": "mcq",
     "prompt": "Welche Frage stellt man am Bahnhof?",
-    "options": ["Wann kommt der Zug nach Koln?", "Wo ist mein Kuchen Auto?", "Wie viel Uhr ist mein Ticket blau?"],
+    "options": [
+      "Wann kommt der Zug nach Koln?",
+      "Wo ist mein Kuchen Auto?",
+      "Wie viel Uhr ist mein Ticket blau?"
+    ],
     "answer": "Wann kommt der Zug nach Koln?",
     "time_limit_seconds": 45,
     "points": 1,
-    "tags": ["transport"]
+    "tags": [
+      "transport"
+    ]
   },
   {
     "id": "a2-028",
@@ -940,7 +1261,9 @@
     "answer": "habe",
     "time_limit_seconds": 40,
     "points": 1,
-    "tags": ["perfekt"]
+    "tags": [
+      "perfekt"
+    ]
   },
   {
     "id": "a2-029",
@@ -948,11 +1271,17 @@
     "skill": "formal-language",
     "type": "mcq",
     "prompt": "Welche Form klingt formeller?",
-    "options": ["Ich mochte gern Informationen erhalten.", "Ich will sofort Info.", "Info jetzt geben."],
+    "options": [
+      "Ich mochte gern Informationen erhalten.",
+      "Ich will sofort Info.",
+      "Info jetzt geben."
+    ],
     "answer": "Ich mochte gern Informationen erhalten.",
     "time_limit_seconds": 45,
     "points": 1,
-    "tags": ["communication"]
+    "tags": [
+      "communication"
+    ]
   },
   {
     "id": "a2-030",
@@ -964,20 +1293,29 @@
     "answer": "",
     "time_limit_seconds": 210,
     "points": 3,
-    "tags": ["writing", "culture"]
+    "tags": [
+      "writing",
+      "culture"
+    ],
+    "rubric": "A2 level. The student should write 3-4 sentences about a celebration they enjoy, mentioning what it is and why they like it. Simple connectors (weil, und, aber) are a plus but not required."
   },
-
   {
     "id": "b1-021",
     "level": "B1",
     "skill": "news",
     "type": "mcq",
     "prompt": "Welche Aussage gibt eine Nachricht neutral wieder?",
-    "options": ["Laut Bericht steigt die Zahl der Fahrgaste.", "Die Fahrgaste sind immer schlecht.", "Fahrgaste machen niemals Sinn."],
+    "options": [
+      "Laut Bericht steigt die Zahl der Fahrgaste.",
+      "Die Fahrgaste sind immer schlecht.",
+      "Fahrgaste machen niemals Sinn."
+    ],
     "answer": "Laut Bericht steigt die Zahl der Fahrgaste.",
     "time_limit_seconds": 55,
     "points": 1,
-    "tags": ["reading"]
+    "tags": [
+      "reading"
+    ]
   },
   {
     "id": "b1-022",
@@ -989,7 +1327,9 @@
     "answer": "trotzdem",
     "time_limit_seconds": 50,
     "points": 1,
-    "tags": ["connectors"]
+    "tags": [
+      "connectors"
+    ]
   },
   {
     "id": "b1-023",
@@ -997,11 +1337,17 @@
     "skill": "work",
     "type": "mcq",
     "prompt": "Welche Formulierung passt in eine Bewerbung?",
-    "options": ["Ich verfuge uber Erfahrung im Projektmanagement.", "Ich habe Projekt gegessen und Management getrunken.", "Projektmanagement ist blau fur mich."],
+    "options": [
+      "Ich verfuge uber Erfahrung im Projektmanagement.",
+      "Ich habe Projekt gegessen und Management getrunken.",
+      "Projektmanagement ist blau fur mich."
+    ],
     "answer": "Ich verfuge uber Erfahrung im Projektmanagement.",
     "time_limit_seconds": 55,
     "points": 1,
-    "tags": ["formal-writing"]
+    "tags": [
+      "formal-writing"
+    ]
   },
   {
     "id": "b1-024",
@@ -1013,7 +1359,9 @@
     "answer": "weil",
     "time_limit_seconds": 50,
     "points": 1,
-    "tags": ["arguments"]
+    "tags": [
+      "arguments"
+    ]
   },
   {
     "id": "b1-025",
@@ -1021,11 +1369,17 @@
     "skill": "evaluation",
     "type": "mcq",
     "prompt": "Welche Aussage bewertet ausgewogen?",
-    "options": ["Der Kurs war interessant, aber etwas zu schnell.", "Der Kurs war nur schlecht immer alles.", "Der Kurs war und ist und wird Tisch."],
+    "options": [
+      "Der Kurs war interessant, aber etwas zu schnell.",
+      "Der Kurs war nur schlecht immer alles.",
+      "Der Kurs war und ist und wird Tisch."
+    ],
     "answer": "Der Kurs war interessant, aber etwas zu schnell.",
     "time_limit_seconds": 55,
     "points": 1,
-    "tags": ["opinions"]
+    "tags": [
+      "opinions"
+    ]
   },
   {
     "id": "b1-026",
@@ -1037,7 +1391,9 @@
     "answer": "bis",
     "time_limit_seconds": 50,
     "points": 1,
-    "tags": ["grammar"]
+    "tags": [
+      "grammar"
+    ]
   },
   {
     "id": "b1-027",
@@ -1045,11 +1401,17 @@
     "skill": "presentation",
     "type": "mcq",
     "prompt": "Welche Einleitung passt fur eine kurze Prasentation?",
-    "options": ["Zunachst mochte ich das Thema kurz vorstellen.", "Ich beginne mit einem Kuchen Bahnhof.", "Prasentation ist fertig Ende Anfang."],
+    "options": [
+      "Zunachst mochte ich das Thema kurz vorstellen.",
+      "Ich beginne mit einem Kuchen Bahnhof.",
+      "Prasentation ist fertig Ende Anfang."
+    ],
     "answer": "Zunachst mochte ich das Thema kurz vorstellen.",
     "time_limit_seconds": 55,
     "points": 1,
-    "tags": ["speaking"]
+    "tags": [
+      "speaking"
+    ]
   },
   {
     "id": "b1-028",
@@ -1061,7 +1423,9 @@
     "answer": "wurde",
     "time_limit_seconds": 50,
     "points": 1,
-    "tags": ["konjunktiv"]
+    "tags": [
+      "konjunktiv"
+    ]
   },
   {
     "id": "b1-029",
@@ -1069,11 +1433,17 @@
     "skill": "reading",
     "type": "mcq",
     "prompt": "Im Aushang steht: 'Eintritt frei'. Was bedeutet das?",
-    "options": ["Man muss nichts bezahlen.", "Man darf nicht hinein.", "Man muss vorher anrufen."],
+    "options": [
+      "Man muss nichts bezahlen.",
+      "Man darf nicht hinein.",
+      "Man muss vorher anrufen."
+    ],
     "answer": "Man muss nichts bezahlen.",
     "time_limit_seconds": 50,
     "points": 1,
-    "tags": ["comprehension"]
+    "tags": [
+      "comprehension"
+    ]
   },
   {
     "id": "b1-030",
@@ -1085,6 +1455,1597 @@
     "answer": "",
     "time_limit_seconds": 240,
     "points": 3,
-    "tags": ["writing", "work"]
+    "tags": [
+      "writing",
+      "work"
+    ],
+    "rubric": "B1 level. The student should write 4-5 sentences discussing advantages and disadvantages of home office work, using contrastive connectors (aber, jedoch, allerdings) and present tense."
+  },
+  {
+    "id": "a1-031",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "warten auf",
+    "preposition": "auf",
+    "case": "Akkusativ",
+    "example": "Ich warte auf den Bus.",
+    "prompt": "What is the English translation of 'warten auf'?",
+    "options": [
+      "to wait for",
+      "to speak with",
+      "to think about"
+    ],
+    "answer": "to wait for",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "prepositions",
+      "verbs"
+    ]
+  },
+  {
+    "id": "a1-032",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sprechen mit",
+    "preposition": "mit",
+    "case": "Dativ",
+    "example": "Er spricht mit seiner Freundin.",
+    "prompt": "What is the English translation of 'sprechen mit'?",
+    "options": [
+      "to speak with",
+      "to wait for",
+      "to look at"
+    ],
+    "answer": "to speak with",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "communication"
+    ]
+  },
+  {
+    "id": "a1-033",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "kommen aus",
+    "preposition": "aus",
+    "case": "Dativ",
+    "example": "Ich komme aus der Schule.",
+    "prompt": "What is the English translation of 'kommen aus'?",
+    "options": [
+      "to come from",
+      "to listen to",
+      "to think of"
+    ],
+    "answer": "to come from",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "prepositions",
+      "places"
+    ]
+  },
+  {
+    "id": "a1-034",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "denken an",
+    "preposition": "an",
+    "case": "Akkusativ",
+    "example": "Ich denke an meine Mutter.",
+    "prompt": "What is the English translation of 'denken an'?",
+    "options": [
+      "to think of",
+      "to listen to",
+      "to belong to"
+    ],
+    "answer": "to think of",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "prepositions",
+      "thoughts"
+    ]
+  },
+  {
+    "id": "a1-035",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "helfen bei",
+    "preposition": "bei",
+    "case": "Dativ",
+    "example": "Kannst du mir bei den Hausaufgaben helfen?",
+    "prompt": "What is the English translation of 'helfen bei'?",
+    "options": [
+      "to help with",
+      "to wait for",
+      "to go into"
+    ],
+    "answer": "to help with",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "prepositions",
+      "support"
+    ]
+  },
+  {
+    "id": "a1-036",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "hoffen auf",
+    "preposition": "auf",
+    "case": "Akkusativ",
+    "example": "Ich hoffe auf gutes Wetter.",
+    "prompt": "What is the English translation of 'hoffen auf'?",
+    "options": [
+      "to hope for",
+      "to speak with",
+      "to come from"
+    ],
+    "answer": "to hope for",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "prepositions",
+      "feelings"
+    ]
+  },
+  {
+    "id": "a1-037",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "schreiben an",
+    "preposition": "an",
+    "case": "Akkusativ",
+    "example": "Ich schreibe an meinen Freund.",
+    "prompt": "What is the English translation of 'schreiben an'?",
+    "options": [
+      "to write to",
+      "to wait for",
+      "to help with"
+    ],
+    "answer": "to write to",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "prepositions",
+      "communication"
+    ]
+  },
+  {
+    "id": "a1-038",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "gehen in",
+    "preposition": "in",
+    "case": "Akkusativ",
+    "example": "Wir gehen in den Park.",
+    "prompt": "What is the English translation of 'gehen in'?",
+    "options": [
+      "to go into",
+      "to arrive from",
+      "to stay with"
+    ],
+    "answer": "to go into",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "prepositions",
+      "movement"
+    ]
+  },
+  {
+    "id": "a2-031",
+    "level": "A2",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sich freuen auf",
+    "preposition": "auf",
+    "case": "Akkusativ",
+    "example": "Ich freue mich auf den Urlaub.",
+    "prompt": "What is the English translation of 'sich freuen auf'?",
+    "options": [
+      "to look forward to",
+      "to think about",
+      "to belong to"
+    ],
+    "answer": "to look forward to",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "emotion"
+    ]
+  },
+  {
+    "id": "a2-032",
+    "level": "A2",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sich interessieren für",
+    "preposition": "für",
+    "case": "Akkusativ",
+    "example": "Ich interessiere mich für Musik.",
+    "prompt": "What is the English translation of 'sich interessieren für'?",
+    "options": [
+      "to be interested in",
+      "to wait for",
+      "to speak with"
+    ],
+    "answer": "to be interested in",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "interests"
+    ]
+  },
+  {
+    "id": "a2-033",
+    "level": "A2",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sich erinnern an",
+    "preposition": "an",
+    "case": "Akkusativ",
+    "example": "Ich erinnere mich an meinen Lehrer.",
+    "prompt": "What is the English translation of 'sich erinnern an'?",
+    "options": [
+      "to remember",
+      "to wait for",
+      "to help with"
+    ],
+    "answer": "to remember",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "memory"
+    ]
+  },
+  {
+    "id": "a2-034",
+    "level": "A2",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sprechen über",
+    "preposition": "über",
+    "case": "Akkusativ",
+    "example": "Wir sprechen über das Wochenende.",
+    "prompt": "What is the English translation of 'sprechen über'?",
+    "options": [
+      "to talk about",
+      "to wait for",
+      "to go into"
+    ],
+    "answer": "to talk about",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "conversation"
+    ]
+  },
+  {
+    "id": "a2-035",
+    "level": "A2",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sich kümmern um",
+    "preposition": "um",
+    "case": "Akkusativ",
+    "example": "Ich kümmere mich um meine Schwester.",
+    "prompt": "What is the English translation of 'sich kümmern um'?",
+    "options": [
+      "to take care of",
+      "to think of",
+      "to write to"
+    ],
+    "answer": "to take care of",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "care"
+    ]
+  },
+  {
+    "id": "a2-036",
+    "level": "A2",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "abhängen von",
+    "preposition": "von",
+    "case": "Dativ",
+    "example": "Das hängt von dir ab.",
+    "prompt": "What is the English translation of 'abhängen von'?",
+    "options": [
+      "to depend on",
+      "to wait for",
+      "to belong to"
+    ],
+    "answer": "to depend on",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "dependency"
+    ]
+  },
+  {
+    "id": "a2-037",
+    "level": "A2",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "traumen von",
+    "preposition": "von",
+    "case": "Dativ",
+    "example": "Sie träumt von einer Reise.",
+    "prompt": "What is the English translation of 'träumen von'?",
+    "options": [
+      "to dream of",
+      "to speak with",
+      "to help with"
+    ],
+    "answer": "to dream of",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "dreams"
+    ]
+  },
+  {
+    "id": "a2-038",
+    "level": "A2",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "teilnehmen an",
+    "preposition": "an",
+    "case": "Dativ",
+    "example": "Ich nehme an dem Kurs teil.",
+    "prompt": "What is the English translation of 'teilnehmen an'?",
+    "options": [
+      "to take part in",
+      "to wait for",
+      "to come from"
+    ],
+    "answer": "to take part in",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "events"
+    ]
+  },
+  {
+    "id": "b1-031",
+    "level": "B1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sich beschweren über",
+    "preposition": "über",
+    "case": "Akkusativ",
+    "example": "Ich beschwere mich über den Lärm.",
+    "prompt": "What is the English translation of 'sich beschweren über'?",
+    "options": [
+      "to complain about",
+      "to dream of",
+      "to depend on"
+    ],
+    "answer": "to complain about",
+    "time_limit_seconds": 50,
+    "points": 1,
+    "tags": [
+      "formal",
+      "verbs"
+    ]
+  },
+  {
+    "id": "b1-032",
+    "level": "B1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sich bewerben um",
+    "preposition": "um",
+    "case": "Akkusativ",
+    "example": "Ich bewerbe mich um den Job.",
+    "prompt": "What is the English translation of 'sich bewerben um'?",
+    "options": [
+      "to apply for",
+      "to wait for",
+      "to take part in"
+    ],
+    "answer": "to apply for",
+    "time_limit_seconds": 50,
+    "points": 1,
+    "tags": [
+      "work",
+      "applications"
+    ]
+  },
+  {
+    "id": "b1-033",
+    "level": "B1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sich gewöhnen an",
+    "preposition": "an",
+    "case": "Akkusativ",
+    "example": "Ich gewöhne mich an das neue Leben.",
+    "prompt": "What is the English translation of 'sich gewöhnen an'?",
+    "options": [
+      "to get used to",
+      "to help with",
+      "to think of"
+    ],
+    "answer": "to get used to",
+    "time_limit_seconds": 50,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "adaptation"
+    ]
+  },
+  {
+    "id": "b1-034",
+    "level": "B1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sich konzentrieren auf",
+    "preposition": "auf",
+    "case": "Akkusativ",
+    "example": "Ich konzentriere mich auf die Prüfung.",
+    "prompt": "What is the English translation of 'sich konzentrieren auf'?",
+    "options": [
+      "to concentrate on",
+      "to wait for",
+      "to speak with"
+    ],
+    "answer": "to concentrate on",
+    "time_limit_seconds": 50,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "study"
+    ]
+  },
+  {
+    "id": "b1-035",
+    "level": "B1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sich vorbereiten auf",
+    "preposition": "auf",
+    "case": "Akkusativ",
+    "example": "Wir bereiten uns auf die Präsentation vor.",
+    "prompt": "What is the English translation of 'sich vorbereiten auf'?",
+    "options": [
+      "to prepare for",
+      "to complain about",
+      "to take part in"
+    ],
+    "answer": "to prepare for",
+    "time_limit_seconds": 50,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "planning"
+    ]
+  },
+  {
+    "id": "b1-036",
+    "level": "B1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sich entscheiden für",
+    "preposition": "für",
+    "case": "Akkusativ",
+    "example": "Ich habe mich für den Kurs entschieden.",
+    "prompt": "What is the English translation of 'sich entscheiden für'?",
+    "options": [
+      "to decide on",
+      "to depend on",
+      "to wait for"
+    ],
+    "answer": "to decide on",
+    "time_limit_seconds": 50,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "choices"
+    ]
+  },
+  {
+    "id": "b1-037",
+    "level": "B1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sich unterhalten über",
+    "preposition": "über",
+    "case": "Akkusativ",
+    "example": "Wir unterhalten uns über den Film.",
+    "prompt": "What is the English translation of 'sich unterhalten über'?",
+    "options": [
+      "to talk about",
+      "to look after",
+      "to apply for"
+    ],
+    "answer": "to talk about",
+    "time_limit_seconds": 50,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "conversation"
+    ]
+  },
+  {
+    "id": "b1-038",
+    "level": "B1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sich anpassen an",
+    "preposition": "an",
+    "case": "Akkusativ",
+    "example": "Man muss sich an neue Regeln anpassen.",
+    "prompt": "What is the English translation of 'sich anpassen an'?",
+    "options": [
+      "to adapt to",
+      "to depend on",
+      "to remember"
+    ],
+    "answer": "to adapt to",
+    "time_limit_seconds": 50,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "change"
+    ]
+  },
+  {
+    "id": "a1-039",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "achten auf",
+    "preposition": "auf",
+    "case": "Akkusativ",
+    "example": "Achte auf die Ampel.",
+    "prompt": "What is the English translation of 'achten auf'?",
+    "options": [
+      "to pay attention to",
+      "to wait for",
+      "to speak with"
+    ],
+    "answer": "to pay attention to",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "attention"
+    ]
+  },
+  {
+    "id": "a1-040",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "fragen nach",
+    "preposition": "nach",
+    "case": "Dativ",
+    "example": "Ich frage nach dem Weg.",
+    "prompt": "What is the English translation of 'fragen nach'?",
+    "options": [
+      "to ask for",
+      "to think of",
+      "to go into"
+    ],
+    "answer": "to ask for",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "communication"
+    ]
+  },
+  {
+    "id": "a1-041",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "gehen zu",
+    "preposition": "zu",
+    "case": "Dativ",
+    "example": "Ich gehe zu meiner Freundin.",
+    "prompt": "What is the English translation of 'gehen zu'?",
+    "options": [
+      "to go to",
+      "to come from",
+      "to wait for"
+    ],
+    "answer": "to go to",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "movement"
+    ]
+  },
+  {
+    "id": "a1-042",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "liegen an",
+    "preposition": "an",
+    "case": "Dativ",
+    "example": "Das liegt an dem Wetter.",
+    "prompt": "What is the English translation of 'liegen an'?",
+    "options": [
+      "to be due to",
+      "to speak with",
+      "to write to"
+    ],
+    "answer": "to be due to",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "reasons"
+    ]
+  },
+  {
+    "id": "a1-043",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "kommen zu",
+    "preposition": "zu",
+    "case": "Dativ",
+    "example": "Kommst du zu mir?",
+    "prompt": "What is the English translation of 'kommen zu'?",
+    "options": [
+      "to come to",
+      "to go from",
+      "to wait for"
+    ],
+    "answer": "to come to",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "movement"
+    ]
+  },
+  {
+    "id": "a1-044",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sitzen auf",
+    "preposition": "auf",
+    "case": "Dativ",
+    "example": "Die Katze sitzt auf dem Sofa.",
+    "prompt": "What is the English translation of 'sitzen auf'?",
+    "options": [
+      "to sit on",
+      "to think of",
+      "to speak with"
+    ],
+    "answer": "to sit on",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "location"
+    ]
+  },
+  {
+    "id": "a1-045",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "zeigen auf",
+    "preposition": "auf",
+    "case": "Akkusativ",
+    "example": "Er zeigt auf die Karte.",
+    "prompt": "What is the English translation of 'zeigen auf'?",
+    "options": [
+      "to point at",
+      "to wait for",
+      "to come from"
+    ],
+    "answer": "to point at",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "gesture"
+    ]
+  },
+  {
+    "id": "a1-046",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "denken über",
+    "preposition": "über",
+    "case": "Akkusativ",
+    "example": "Ich denke über das Thema nach.",
+    "prompt": "What is the English translation of 'denken über'?",
+    "options": [
+      "to think about",
+      "to go into",
+      "to listen to"
+    ],
+    "answer": "to think about",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "thoughts"
+    ]
+  },
+  {
+    "id": "a2-039",
+    "level": "A2",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sich ärgern über",
+    "preposition": "über",
+    "case": "Akkusativ",
+    "example": "Ich ärgere mich über den Stau.",
+    "prompt": "What is the English translation of 'sich ärgern über'?",
+    "options": [
+      "to be annoyed about",
+      "to depend on",
+      "to prepare for"
+    ],
+    "answer": "to be annoyed about",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "emotion"
+    ]
+  },
+  {
+    "id": "a2-040",
+    "level": "A2",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sich freuen über",
+    "preposition": "über",
+    "case": "Akkusativ",
+    "example": "Ich freue mich über dein Geschenk.",
+    "prompt": "What is the English translation of 'sich freuen über'?",
+    "options": [
+      "to be pleased about",
+      "to apply for",
+      "to depend on"
+    ],
+    "answer": "to be pleased about",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "emotion"
+    ]
+  },
+  {
+    "id": "a1-047",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "passen zu",
+    "preposition": "zu",
+    "case": "Dativ",
+    "example": "Die Schuhe passen zu dem Kleid.",
+    "prompt": "What is the English translation of 'passen zu'?",
+    "options": [
+      "to match",
+      "to depend on",
+      "to think of"
+    ],
+    "answer": "to match",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "matching"
+    ]
+  },
+  {
+    "id": "a1-048",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "hören auf",
+    "preposition": "auf",
+    "case": "Akkusativ",
+    "example": "Hör auf die Musik.",
+    "prompt": "What is the English translation of 'hören auf'?",
+    "options": [
+      "to listen to",
+      "to wait for",
+      "to look at"
+    ],
+    "answer": "to listen to",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "listening"
+    ]
+  },
+  {
+    "id": "a1-049",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "gehen mit",
+    "preposition": "mit",
+    "case": "Dativ",
+    "example": "Ich gehe mit meinem Bruder.",
+    "prompt": "What is the English translation of 'gehen mit'?",
+    "options": [
+      "to go with",
+      "to think of",
+      "to depend on"
+    ],
+    "answer": "to go with",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "movement"
+    ]
+  },
+  {
+    "id": "a1-050",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "glauben an",
+    "preposition": "an",
+    "case": "Akkusativ",
+    "example": "Ich glaube an dich.",
+    "prompt": "What is the English translation of 'glauben an'?",
+    "options": [
+      "to believe in",
+      "to wait for",
+      "to come from"
+    ],
+    "answer": "to believe in",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "belief"
+    ]
+  },
+  {
+    "id": "a1-051",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "suchen nach",
+    "preposition": "nach",
+    "case": "Dativ",
+    "example": "Ich suche nach meinem Schlüssel.",
+    "prompt": "What is the English translation of 'suchen nach'?",
+    "options": [
+      "to search for",
+      "to listen to",
+      "to sit on"
+    ],
+    "answer": "to search for",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "searching"
+    ]
+  },
+  {
+    "id": "a1-052",
+    "level": "A1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "telefonieren mit",
+    "preposition": "mit",
+    "case": "Dativ",
+    "example": "Ich telefoniere mit meiner Oma.",
+    "prompt": "What is the English translation of 'telefonieren mit'?",
+    "options": [
+      "to talk on the phone with",
+      "to write to",
+      "to point at"
+    ],
+    "answer": "to talk on the phone with",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "communication"
+    ]
+  },
+  {
+    "id": "a1-053",
+    "level": "A1",
+    "skill": "greetings",
+    "type": "mcq",
+    "prompt": "Was sagt man am Abend?",
+    "options": [
+      "Guten Abend",
+      "Guten Morgen",
+      "Gute Reise"
+    ],
+    "answer": "Guten Abend",
+    "time_limit_seconds": 30,
+    "points": 1,
+    "tags": [
+      "greetings"
+    ]
+  },
+  {
+    "id": "a1-054",
+    "level": "A1",
+    "skill": "possessive",
+    "type": "gapfill",
+    "prompt": "Das ist ___ Auto. (du)",
+    "options": [],
+    "answer": "dein",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "grammar"
+    ]
+  },
+  {
+    "id": "a1-055",
+    "level": "A1",
+    "skill": "body",
+    "type": "mcq",
+    "prompt": "Womit siehst du?",
+    "options": [
+      "Mit den Augen.",
+      "Mit den Ohren.",
+      "Mit den Händen."
+    ],
+    "answer": "Mit den Augen.",
+    "time_limit_seconds": 30,
+    "points": 1,
+    "tags": [
+      "vocabulary",
+      "body"
+    ]
+  },
+  {
+    "id": "a1-056",
+    "level": "A1",
+    "skill": "verbs",
+    "type": "gapfill",
+    "prompt": "Er ___ am Samstag Fußball.",
+    "options": [],
+    "answer": "spielt",
+    "time_limit_seconds": 30,
+    "points": 1,
+    "tags": [
+      "present-tense"
+    ]
+  },
+  {
+    "id": "a1-057",
+    "level": "A1",
+    "skill": "numbers",
+    "type": "mcq",
+    "prompt": "Wie viel ist zwanzig plus zehn?",
+    "options": [
+      "dreißig",
+      "dreizehn",
+      "zwölf"
+    ],
+    "answer": "dreißig",
+    "time_limit_seconds": 30,
+    "points": 1,
+    "tags": [
+      "numbers"
+    ]
+  },
+  {
+    "id": "a1-058",
+    "level": "A1",
+    "skill": "articles",
+    "type": "gapfill",
+    "prompt": "___ Sonne scheint heute.",
+    "options": [],
+    "answer": "Die",
+    "time_limit_seconds": 30,
+    "points": 1,
+    "tags": [
+      "grammar",
+      "articles"
+    ]
+  },
+  {
+    "id": "a1-059",
+    "level": "A1",
+    "skill": "hobbies",
+    "type": "mcq",
+    "prompt": "Was machst du gern?",
+    "options": [
+      "Ich lese gern Bücher.",
+      "Ich Bücher gern.",
+      "Gern ich Bücher esse."
+    ],
+    "answer": "Ich lese gern Bücher.",
+    "time_limit_seconds": 30,
+    "points": 1,
+    "tags": [
+      "free-time"
+    ]
+  },
+  {
+    "id": "a1-060",
+    "level": "A1",
+    "skill": "accusative",
+    "type": "gapfill",
+    "prompt": "Wir haben ___ Hund. (ein)",
+    "options": [],
+    "answer": "einen",
+    "time_limit_seconds": 35,
+    "points": 1,
+    "tags": [
+      "grammar",
+      "cases"
+    ]
+  },
+  {
+    "id": "a1-061",
+    "level": "A1",
+    "skill": "question-words",
+    "type": "mcq",
+    "prompt": "___ alt bist du? - Ich bin 20.",
+    "options": [
+      "Wie",
+      "Wo",
+      "Wann"
+    ],
+    "answer": "Wie",
+    "time_limit_seconds": 30,
+    "points": 1,
+    "tags": [
+      "question-words"
+    ]
+  },
+  {
+    "id": "a1-062",
+    "level": "A1",
+    "skill": "writing",
+    "type": "short_answer",
+    "prompt": "Schreibe 2-3 Sätze über dein Lieblingsessen.",
+    "options": [],
+    "answer": "",
+    "time_limit_seconds": 140,
+    "points": 2,
+    "tags": [
+      "writing",
+      "food"
+    ],
+    "rubric": "A1 level. The student should write 2-3 simple sentences about a favorite food, mentioning what it is and optionally why they like it. Basic present-tense verbs and vocabulary expected."
+  },
+  {
+    "id": "a2-041",
+    "level": "A2",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "bitten um",
+    "preposition": "um",
+    "case": "Akkusativ",
+    "example": "Ich bitte dich um Hilfe.",
+    "prompt": "What is the English translation of 'bitten um'?",
+    "options": [
+      "to ask for",
+      "to thank for",
+      "to reply to"
+    ],
+    "answer": "to ask for",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "requests"
+    ]
+  },
+  {
+    "id": "a2-042",
+    "level": "A2",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "danken für",
+    "preposition": "für",
+    "case": "Akkusativ",
+    "example": "Ich danke dir für das Geschenk.",
+    "prompt": "What is the English translation of 'danken für'?",
+    "options": [
+      "to thank for",
+      "to ask for",
+      "to dream of"
+    ],
+    "answer": "to thank for",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "politeness"
+    ]
+  },
+  {
+    "id": "a2-043",
+    "level": "A2",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "antworten auf",
+    "preposition": "auf",
+    "case": "Akkusativ",
+    "example": "Er antwortet auf meine Frage.",
+    "prompt": "What is the English translation of 'antworten auf'?",
+    "options": [
+      "to reply to",
+      "to look forward to",
+      "to take care of"
+    ],
+    "answer": "to reply to",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "communication"
+    ]
+  },
+  {
+    "id": "a2-044",
+    "level": "A2",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "einladen zu",
+    "preposition": "zu",
+    "case": "Dativ",
+    "example": "Ich lade dich zu meiner Party ein.",
+    "prompt": "What is the English translation of 'einladen zu'?",
+    "options": [
+      "to invite to",
+      "to depend on",
+      "to be interested in"
+    ],
+    "answer": "to invite to",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "social"
+    ]
+  },
+  {
+    "id": "a2-045",
+    "level": "A2",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "gehören zu",
+    "preposition": "zu",
+    "case": "Dativ",
+    "example": "Das Buch gehört zu meiner Sammlung.",
+    "prompt": "What is the English translation of 'gehören zu'?",
+    "options": [
+      "to belong to",
+      "to talk about",
+      "to prepare for"
+    ],
+    "answer": "to belong to",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "belonging"
+    ]
+  },
+  {
+    "id": "a2-046",
+    "level": "A2",
+    "skill": "dative",
+    "type": "mcq",
+    "prompt": "Ich schenke ___ Mutter Blumen.",
+    "options": [
+      "meiner",
+      "meine",
+      "mein"
+    ],
+    "answer": "meiner",
+    "time_limit_seconds": 45,
+    "points": 1,
+    "tags": [
+      "grammar",
+      "cases"
+    ]
+  },
+  {
+    "id": "a2-047",
+    "level": "A2",
+    "skill": "past-tense",
+    "type": "gapfill",
+    "prompt": "Als Kind ___ ich oft im Garten gespielt.",
+    "options": [],
+    "answer": "habe",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "perfekt"
+    ]
+  },
+  {
+    "id": "a2-048",
+    "level": "A2",
+    "skill": "shopping",
+    "type": "mcq",
+    "prompt": "Im Kleidungsgeschäft: 'Kann ich die Jacke ___?'",
+    "options": [
+      "anprobieren",
+      "anrufen",
+      "abfahren"
+    ],
+    "answer": "anprobieren",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "shopping",
+      "clothes"
+    ]
+  },
+  {
+    "id": "a2-049",
+    "level": "A2",
+    "skill": "connectors",
+    "type": "gapfill",
+    "prompt": "Der Film war langweilig, ___ sind wir früher gegangen.",
+    "options": [],
+    "answer": "deshalb",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "cause-effect"
+    ]
+  },
+  {
+    "id": "a2-050",
+    "level": "A2",
+    "skill": "imperative",
+    "type": "mcq",
+    "prompt": "Welche Aufforderung ist korrekt?",
+    "options": [
+      "Mach bitte das Fenster zu.",
+      "Machst bitte das Fenster zu.",
+      "Zumachen Fenster das bitte."
+    ],
+    "answer": "Mach bitte das Fenster zu.",
+    "time_limit_seconds": 45,
+    "points": 1,
+    "tags": [
+      "grammar",
+      "imperative"
+    ]
+  },
+  {
+    "id": "a2-051",
+    "level": "A2",
+    "skill": "connectors",
+    "type": "gapfill",
+    "prompt": "Ich lerne Deutsch, ___ ich in Deutschland arbeiten möchte.",
+    "options": [],
+    "answer": "weil",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "cause",
+      "subordinate-clauses"
+    ]
+  },
+  {
+    "id": "a2-052",
+    "level": "A2",
+    "skill": "separable-verbs",
+    "type": "gapfill",
+    "prompt": "Wenn ich Zeit habe, ___ ich dich an.",
+    "options": [],
+    "answer": "rufe",
+    "time_limit_seconds": 40,
+    "points": 1,
+    "tags": [
+      "grammar",
+      "separable-verbs"
+    ]
+  },
+  {
+    "id": "a2-053",
+    "level": "A2",
+    "skill": "writing",
+    "type": "short_answer",
+    "prompt": "Schreibe 3-4 Sätze über deine Stadt: Was kann man dort machen?",
+    "options": [],
+    "answer": "",
+    "time_limit_seconds": 200,
+    "points": 3,
+    "tags": [
+      "writing",
+      "city"
+    ],
+    "rubric": "A2 level. The student should write 3-4 sentences about their city, describing at least two things one can do there. Present tense and basic connectors expected."
+  },
+  {
+    "id": "b1-039",
+    "level": "B1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "verzichten auf",
+    "preposition": "auf",
+    "case": "Akkusativ",
+    "example": "Ich verzichte auf Zucker.",
+    "prompt": "What is the English translation of 'verzichten auf'?",
+    "options": [
+      "to do without",
+      "to concentrate on",
+      "to apply for"
+    ],
+    "answer": "to do without",
+    "time_limit_seconds": 50,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "lifestyle"
+    ]
+  },
+  {
+    "id": "b1-040",
+    "level": "B1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "leiden unter",
+    "preposition": "unter",
+    "case": "Dativ",
+    "example": "Er leidet unter dem Stress.",
+    "prompt": "What is the English translation of 'leiden unter'?",
+    "options": [
+      "to suffer from",
+      "to get used to",
+      "to decide on"
+    ],
+    "answer": "to suffer from",
+    "time_limit_seconds": 50,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "health"
+    ]
+  },
+  {
+    "id": "b1-041",
+    "level": "B1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "überzeugen von",
+    "preposition": "von",
+    "case": "Dativ",
+    "example": "Sie überzeugt mich von ihrer Idee.",
+    "prompt": "What is the English translation of 'überzeugen von'?",
+    "options": [
+      "to convince of",
+      "to complain about",
+      "to adapt to"
+    ],
+    "answer": "to convince of",
+    "time_limit_seconds": 50,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "argumentation"
+    ]
+  },
+  {
+    "id": "b1-042",
+    "level": "B1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "sich beschäftigen mit",
+    "preposition": "mit",
+    "case": "Dativ",
+    "example": "Ich beschäftige mich mit deutscher Grammatik.",
+    "prompt": "What is the English translation of 'sich beschäftigen mit'?",
+    "options": [
+      "to deal with",
+      "to do without",
+      "to suffer from"
+    ],
+    "answer": "to deal with",
+    "time_limit_seconds": 50,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "study"
+    ]
+  },
+  {
+    "id": "b1-043",
+    "level": "B1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "warnen vor",
+    "preposition": "vor",
+    "case": "Dativ",
+    "example": "Die Polizei warnt vor dem Sturm.",
+    "prompt": "What is the English translation of 'warnen vor'?",
+    "options": [
+      "to warn about",
+      "to convince of",
+      "to deal with"
+    ],
+    "answer": "to warn about",
+    "time_limit_seconds": 50,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "warnings"
+    ]
+  },
+  {
+    "id": "b1-044",
+    "level": "B1",
+    "skill": "verb-prepositions",
+    "type": "mcq",
+    "verb": "zweifeln an",
+    "preposition": "an",
+    "case": "Dativ",
+    "example": "Ich zweifle an dem Plan.",
+    "prompt": "What is the English translation of 'zweifeln an'?",
+    "options": [
+      "to doubt",
+      "to believe in",
+      "to warn about"
+    ],
+    "answer": "to doubt",
+    "time_limit_seconds": 50,
+    "points": 1,
+    "tags": [
+      "verbs",
+      "opinions"
+    ]
+  },
+  {
+    "id": "b1-045",
+    "level": "B1",
+    "skill": "passive",
+    "type": "mcq",
+    "prompt": "Welcher Satz steht im Passiv?",
+    "options": [
+      "Das Haus wird renoviert.",
+      "Wir renovieren das Haus.",
+      "Das Haus ist schön."
+    ],
+    "answer": "Das Haus wird renoviert.",
+    "time_limit_seconds": 55,
+    "points": 1,
+    "tags": [
+      "grammar",
+      "passive"
+    ]
+  },
+  {
+    "id": "b1-046",
+    "level": "B1",
+    "skill": "relative-clauses",
+    "type": "gapfill",
+    "prompt": "Das ist der Mann, ___ mir geholfen hat.",
+    "options": [],
+    "answer": "der",
+    "time_limit_seconds": 50,
+    "points": 1,
+    "tags": [
+      "grammar",
+      "relative-clauses"
+    ]
+  },
+  {
+    "id": "b1-047",
+    "level": "B1",
+    "skill": "indirect-questions",
+    "type": "mcq",
+    "prompt": "Welche indirekte Frage ist korrekt?",
+    "options": [
+      "Weißt du, wann der Zug abfährt?",
+      "Weißt du, wann fährt der Zug ab?",
+      "Weißt du, der Zug wann abfährt?"
+    ],
+    "answer": "Weißt du, wann der Zug abfährt?",
+    "time_limit_seconds": 55,
+    "points": 1,
+    "tags": [
+      "grammar",
+      "word-order"
+    ]
+  },
+  {
+    "id": "b1-048",
+    "level": "B1",
+    "skill": "comparisons",
+    "type": "gapfill",
+    "prompt": "Je mehr ich übe, ___ besser spreche ich.",
+    "options": [],
+    "answer": "desto",
+    "time_limit_seconds": 50,
+    "points": 1,
+    "tags": [
+      "grammar",
+      "connectors"
+    ]
+  },
+  {
+    "id": "b1-049",
+    "level": "B1",
+    "skill": "genitive",
+    "type": "mcq",
+    "prompt": "Trotz ___ Regens gingen wir spazieren.",
+    "options": [
+      "des",
+      "dem",
+      "der"
+    ],
+    "answer": "des",
+    "time_limit_seconds": 55,
+    "points": 1,
+    "tags": [
+      "grammar",
+      "cases"
+    ]
+  },
+  {
+    "id": "b1-050",
+    "level": "B1",
+    "skill": "plusquamperfekt",
+    "type": "gapfill",
+    "prompt": "Nachdem wir gegessen ___, machten wir einen Spaziergang.",
+    "options": [],
+    "answer": "hatten",
+    "time_limit_seconds": 55,
+    "points": 1,
+    "tags": [
+      "grammar",
+      "past-tense"
+    ]
+  },
+  {
+    "id": "b1-051",
+    "level": "B1",
+    "skill": "writing",
+    "type": "short_answer",
+    "prompt": "Schreibe 4-5 Sätze: Ist es besser, in einer Großstadt oder auf dem Land zu leben? Begründe deine Meinung.",
+    "options": [],
+    "answer": "",
+    "time_limit_seconds": 240,
+    "points": 3,
+    "tags": [
+      "writing",
+      "argumentation"
+    ],
+    "rubric": "B1 level. The student should write 4-5 sentences comparing city life and countryside life, giving a justified opinion. Should use opinion phrases (meiner Meinung nach) and at least one connector (weil, deshalb, obwohl, aber)."
   }
 ]

@@ -5,11 +5,21 @@
       <span class="question-skill" v-if="question.skill">{{ question.skill }}</span>
     </header>
 
+    <div v-if="isVerbPreposition" class="vp-card">
+      <div class="vp-row">
+        <span class="vp-label">Verb + Preposition</span>
+        <strong class="vp-title">{{ question.verb }}</strong>
+      </div>
+      <div class="vp-meta">Case: {{ question.case }}</div>
+      <div class="vp-example">Example: {{ question.example }}</div>
+    </div>
+
     <div class="question-prompt" v-html="question.prompt"></div>
 
-    <p class="question-help" v-if="question.type === 'mcq'">Choose one answer.</p>
+    <p class="question-help" v-if="isVerbPreposition">Choose the English translation of the verb + preposition.</p>
+    <p class="question-help" v-else-if="question.type === 'mcq'">Choose one answer.</p>
     <p class="question-help" v-else-if="question.type === 'gapfill'">Type one short phrase to complete the blank.</p>
-    <p class="question-help" v-else-if="question.type === 'short_answer'">Write 2-5 sentences. This answer is for practice and not auto-scored.</p>
+    <p class="question-help" v-else-if="question.type === 'short_answer'">Write 4-5 sentences. This answer is for practice and not auto-scored.</p>
 
     <div v-if="question.type === 'mcq'" class="option-list">
       <button
@@ -64,7 +74,9 @@ const displayedOptions = ref([]);
 const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
 
 const hasInput = computed(() => String(answer.value || '').trim().length > 0);
+const isVerbPreposition = computed(() => props.question?.skill === 'verb-prepositions');
 const typeLabel = computed(() => {
+  if (isVerbPreposition.value) return 'Verb + Preposition';
   if (props.question?.type === 'mcq') return 'Multiple Choice';
   if (props.question?.type === 'gapfill') return 'Gap Fill';
   if (props.question?.type === 'short_answer') return 'Short Answer';
@@ -100,103 +112,196 @@ function submit() {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+/* ==========================================
+   TOKENS — same as home.vue / topic.vue
+========================================== */
+
 .question-card {
-  border-radius: 1rem;
-  border: 1px solid #e6e0d2;
-  background: linear-gradient(180deg, #fffefb 0%, #fffaf1 100%);
-  padding: 1rem;
+  --paper: #f2eee5;
+  --ink: #16130e;
+  --red: #e2261f;
+  --blue: #1b4fd8;
+  --yellow: #f5b80c;
+  --muted: #6e675b;
+  --rule: 2px solid var(--ink);
+
+  font-family: "Archivo", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  border: var(--rule);
+  padding: 28px;
 }
+
+/* ==========================================
+   HEADER
+========================================== */
 
 .question-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.6rem;
+  flex-wrap: wrap;
+  border-bottom: 3px solid var(--ink);
+  padding-bottom: 16px;
 }
 
 .question-type,
 .question-skill {
-  border-radius: 999px;
-  border: 1px solid rgba(17, 24, 39, 0.15);
-  background: #ffffff;
-  padding: 0.2rem 0.55rem;
-  font-size: 0.74rem;
-  font-weight: 700;
-  color: #1f3346;
-  text-transform: capitalize;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 2px solid var(--ink);
+  background: transparent;
+  padding: 4px 10px;
+  color: var(--ink);
 }
 
+.question-skill {
+  background: var(--yellow);
+}
+
+/* ==========================================
+   VERB + PREPOSITION CARD
+========================================== */
+
+.vp-card {
+  margin-top: 20px;
+  border-left: 4px solid var(--blue);
+  background: transparent;
+  padding: 4px 0 4px 18px;
+}
+
+.vp-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.vp-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.vp-title {
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--ink);
+}
+
+.vp-meta,
+.vp-example {
+  margin-top: 6px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ==========================================
+   PROMPT
+========================================== */
+
 .question-prompt {
-  margin-top: 0.7rem;
-  color: #152636;
-  font-size: 1.16rem;
-  font-weight: 700;
-  line-height: 1.35;
+  margin-top: 26px;
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  color: var(--ink);
 }
 
 .question-help {
-  margin: 0.4rem 0 0;
-  color: #4e6277;
-  font-size: 0.88rem;
+  margin: 10px 0 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.82rem;
+  color: var(--muted);
 }
 
+/* ==========================================
+   OPTIONS
+========================================== */
+
 .option-list {
-  margin-top: 0.8rem;
+  margin-top: 22px;
   display: grid;
-  gap: 0.55rem;
+  gap: 12px;
 }
 
 .option-btn {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  border: 1px solid #d9e4f0;
-  border-radius: 0.75rem;
-  background: #ffffff;
-  padding: 0.7rem 0.85rem;
-  color: #1a2d3f;
+  gap: 14px;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  padding: 14px 16px;
+  color: var(--ink);
+  font-family: "Archivo", sans-serif;
+  font-size: 1rem;
   text-align: left;
-  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .option-btn:hover {
-  background: #f2f8ff;
-  border-color: #bcd3ea;
-  transform: translateY(-1px);
+  background: var(--ink);
+  color: var(--paper);
+  transform: translateX(4px);
+}
+
+.option-btn:hover .option-index {
+  background: var(--yellow);
+  color: var(--ink);
+  border-color: var(--yellow);
 }
 
 .option-btn:focus-visible,
 .submit-btn:focus-visible,
 .answer-input:focus-visible {
-  outline: 3px solid #1d74d8;
-  outline-offset: 2px;
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
 }
 
 .option-index {
-  min-width: 1.65rem;
-  height: 1.65rem;
-  border-radius: 999px;
-  background: #ecf4ff;
-  border: 1px solid #b6cde5;
+  min-width: 28px;
+  height: 28px;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 500;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
+/* ==========================================
+   TEXT / GAPFILL INPUTS
+========================================== */
+
 .input-block {
-  margin-top: 0.8rem;
+  margin-top: 22px;
 }
 
 .answer-input {
   width: 100%;
-  border: 1px solid #d6deeb;
-  border-radius: 0.75rem;
-  background: #ffffff;
-  padding: 0.72rem 0.8rem;
-  color: #1e2f40;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  padding: 12px 14px;
+  color: var(--ink);
+  font-family: "Archivo", sans-serif;
+  font-size: 1rem;
 }
 
 .answer-textarea {
@@ -204,28 +309,54 @@ function submit() {
 }
 
 .submit-btn {
-  margin-top: 0.65rem;
-  border: 1px solid transparent;
-  border-radius: 0.7rem;
-  background: #0f66bf;
-  color: #ffffff;
-  font-weight: 700;
-  padding: 0.58rem 0.9rem;
+  margin-top: 14px;
+  border: 2px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 22px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: var(--blue);
+  border-color: var(--blue);
 }
 
 .submit-btn:disabled {
-  background: #a6bdd5;
+  background: transparent;
+  color: var(--muted);
+  border-color: var(--muted);
   cursor: not-allowed;
 }
 
+/* ==========================================
+   AUDIO
+========================================== */
+
 .audio-player {
   width: 100%;
+  margin-bottom: 16px;
 }
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
 
 @media (max-width: 700px) {
   .question-header {
     align-items: flex-start;
     flex-direction: column;
+    gap: 8px;
+  }
+  .question-card {
+    padding: 20px;
+  }
+  .question-prompt {
+    font-size: 1.1rem;
   }
 }
 </style>
