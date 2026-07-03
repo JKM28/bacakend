@@ -99,4 +99,5 @@ Respond with ONLY valid JSON, no markdown code fences, no extra text, in exactly
   }
 });
 
-app.listen(3000, () => console.log("Server running on http://localhost:3000"));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
